@@ -1,0 +1,13 @@
+//
+//  Constants.swift
+//  VoalaaAR
+//
+//  Created by Amr Moussa on 26/10/2021.
+//
+
+import UIKit
+
+
+struct Images {
+    static let ringUpImage = UIImage(named: "ringUp")
+}
