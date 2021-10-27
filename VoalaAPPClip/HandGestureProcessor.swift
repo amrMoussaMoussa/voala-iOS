@@ -22,6 +22,7 @@ class HandGestureProcessor {
 //    }
     
     typealias PointsPair = (ringPip: CGPoint, ringMcp: CGPoint)
+    typealias helperPair = (littleMcp: CGPoint, middleMcp: CGPoint)
     
 //    private var state = State.unknown {
 //        didSet {
@@ -35,8 +36,9 @@ class HandGestureProcessor {
     
     var didChangeStateClosure: (() -> Void)?
     private (set) var lastProcessedPointsPair = PointsPair(.zero, .zero)
+    private (set) var lastHelperPOints = helperPair(.zero,.zero)
     private (set) var midPOint:CGPoint = .zero
-    
+    private (set) var wristPoint:CGPoint = .zero
     init(pinchMaxDistance: CGFloat = 40, evidenceCounterStateTrigger: Int = 3) {
 //        self.pinchMaxDistance = pinchMaxDistance
 //        self.evidenceCounterStateTrigger = evidenceCounterStateTrigger
@@ -48,10 +50,12 @@ class HandGestureProcessor {
 //        apartEvidenceCounter = 0
     }
     
-    func processPointsPair(_ pointsPair: PointsPair) {
+    func processPointsPair(_ pointsPair: PointsPair,helperPOints:helperPair,wrist:CGPoint) {
         lastProcessedPointsPair = pointsPair
-        let distance = pointsPair.ringPip.distance(from: pointsPair.ringMcp)
+//        let distance = pointsPair.ringPip.distance(from: pointsPair.ringMcp)
         midPOint = CGPoint.midPoint(p1: pointsPair.ringPip, p2: pointsPair.ringMcp)
+        lastHelperPOints = helperPOints
+        wristPoint = wrist
         didChangeStateClosure?()
 //        if distance < pinchMaxDistance {
 //            // Keep accumulating evidence for pinch state.

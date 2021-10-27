@@ -10,4 +10,6 @@ import UIKit
 
 struct Images {
     static let ringUpImage = UIImage(named: "ringUp")
+    static let ringBackImage = UIImage(named: "ringBack")
+    
 }

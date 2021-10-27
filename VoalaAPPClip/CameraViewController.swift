@@ -100,14 +100,14 @@ class CameraViewController: UIViewController {
         cameraFeedSession = session
 }
     
-    func processPoints(ringPip: CGPoint?, ringMcp: CGPoint?) {
+    func processPoints(ringPip: CGPoint?, ringMcp: CGPoint?,littleMcp:CGPoint?,midlleMcp:CGPoint?,wrist:CGPoint?) {
         // Check that we have both points.
-        guard let ringPip = ringPip, let ringMcp = ringMcp else {
+        guard let ringPip = ringPip, let ringMcp = ringMcp ,let littleMcp = littleMcp ,let middleMcp = midlleMcp , let wrist = wrist else {
             // If there were no observations for more than 2 seconds reset gesture processor.
             if Date().timeIntervalSince(lastObservationTimestamp) > 2 {
                 gestureProcessor.reset()
             }
-            cameraView.showPoints([], midPOint: .zero, color: .clear)
+            cameraView.showPoints([], midPOint: .zero, helperPOints: [], wrist: wrist, color: .clear)
             return
         }
         
@@ -115,14 +115,18 @@ class CameraViewController: UIViewController {
         let previewLayer = cameraView.previewLayer
         let ringPipPointConverted = previewLayer.layerPointConverted(fromCaptureDevicePoint: ringPip)
         let ringMcpPointConverted = previewLayer.layerPointConverted(fromCaptureDevicePoint: ringMcp)
-        
+        let littleMcpPointConverted = previewLayer.layerPointConverted(fromCaptureDevicePoint: littleMcp)
+        let middleMcpPointConverted = previewLayer.layerPointConverted(fromCaptureDevicePoint: middleMcp)
+        let wristPointConverted = previewLayer.layerPointConverted(fromCaptureDevicePoint: wrist)
         // Process new points
-        gestureProcessor.processPointsPair((ringPipPointConverted, ringMcpPointConverted))
+        gestureProcessor.processPointsPair((ringPipPointConverted, ringMcpPointConverted), helperPOints: (littleMcpPointConverted,middleMcpPointConverted),wrist:wristPointConverted)
     }
     
     private func handleGestureStateChange(/*state: HandGestureProcessor.State*/) {
         let pointsPair = gestureProcessor.lastProcessedPointsPair
         let midPoint = gestureProcessor.midPOint
+        let helperPOints = gestureProcessor.lastHelperPOints
+        let wrist  = gestureProcessor.wristPoint
         let tipsColor: UIColor = .red
 //        switch state {
 //        case .possiblePinch, .possibleApart:
@@ -148,7 +152,7 @@ class CameraViewController: UIViewController {
 //            updatePath(with: pointsPair, isLastPointsPair: true)
 //            tipsColor = .red
 //        }
-        cameraView.showPoints([pointsPair.ringPip, pointsPair.ringMcp], midPOint: midPoint,color: tipsColor)
+        cameraView.showPoints([pointsPair.ringPip, pointsPair.ringMcp], midPOint: midPoint, helperPOints: [helperPOints.littleMcp,helperPOints.middleMcp], wrist: wrist ,color: tipsColor)
     }
     
     private func updatePath(with points: HandGestureProcessor.PointsPair, isLastPointsPair: Bool) {
@@ -202,10 +206,13 @@ extension CameraViewController: AVCaptureVideoDataOutputSampleBufferDelegate {
     public func captureOutput(_ output: AVCaptureOutput, didOutput sampleBuffer: CMSampleBuffer, from connection: AVCaptureConnection) {
         var pipPOint: CGPoint?
         var mcpPoint: CGPoint?
+        var littleMcp:CGPoint?
+        var middleMcp:CGPoint?
+        var wrist:CGPoint?
         
         defer {
             DispatchQueue.main.sync {
-                self.processPoints(ringPip: pipPOint, ringMcp: mcpPoint)
+                self.processPoints(ringPip: pipPOint, ringMcp: mcpPoint,littleMcp: littleMcp,midlleMcp: middleMcp,wrist:wrist)
             }
         }
 
@@ -220,24 +227,35 @@ extension CameraViewController: AVCaptureVideoDataOutputSampleBufferDelegate {
             }
             // Get points for thumb and index finger.
             
+            
             let ringPoints = try observation.recognizedPoints(.ringFinger)
+            
             
             // get helper points
             // little finger.
-//            let littleFinger = try observation.recognizedPoints(.littleFinger)
-//            let middleFinger = 
+            let littleFinger = try observation.recognizedPoints(.littleFinger)
+            let middleFinger = try observation.recognizedPoints(.middleFinger)
+            let wristPOint = try observation.recognizedPoints(.all)
             
             // Look for tip points.
-            guard let pipPointsRaw = ringPoints[.ringPIP], let mcpPointRaw = ringPoints[.ringMCP] else {
+            guard let pipPointsRaw = ringPoints[.ringPIP], let mcpPointRaw = ringPoints[.ringMCP],let wristRaw = wristPOint[.wrist] else {
                 return
             }
+            
+            guard let littleMcpPointsRaw = littleFinger[.littleMCP], let middleMcpPointRaw = middleFinger[.middleMCP] else {
+                return
+            }
+            
             // Ignore low confidence points.
-            guard pipPointsRaw.confidence > 0.3 && mcpPointRaw.confidence > 0.3 else {
+            guard pipPointsRaw.confidence > 0.3 && mcpPointRaw.confidence > 0.3 && littleMcpPointsRaw.confidence > 0.3 && middleMcpPointRaw.confidence > 0.3 && wristRaw.confidence > 0.3 else {
                 return
             }
             // Convert points from Vision coordinates to AVFoundation coordinates.
             pipPOint = CGPoint(x: pipPointsRaw.location.x, y: 1 - pipPointsRaw.location.y)
             mcpPoint = CGPoint(x: mcpPointRaw.location.x, y: 1 - mcpPointRaw.location.y)
+            littleMcp = CGPoint(x: littleMcpPointsRaw.location.x, y: 1 - littleMcpPointsRaw.location.y)
+            middleMcp = CGPoint(x: middleMcpPointRaw.location.x, y: 1 - middleMcpPointRaw.location.y)
+            wrist = CGPoint(x: wristRaw.location.x, y: 1 - wristRaw.location.y)
         } catch {
             cameraFeedSession?.stopRunning()
             let error = AppError.visionError(error: error)
