@@ -127,7 +127,7 @@ class CameraViewController: UIViewController {
         let midPoint = gestureProcessor.midPOint
         let helperPOints = gestureProcessor.lastHelperPOints
         let wrist  = gestureProcessor.wristPoint
-        let tipsColor: UIColor = .red
+        let tipsColor: UIColor = .clear
 //        switch state {
 //        case .possiblePinch, .possibleApart:
 //            // We are in one of the "possible": states, meaning there is not enough evidence yet to determine

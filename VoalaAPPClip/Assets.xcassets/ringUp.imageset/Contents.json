@@ -1,17 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "ringUp.png",
+      "filename" : "1611850549-top-down.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "ringUp-1.png",
+      "filename" : "1611850549-top-down-1.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "ringUp-2.png",
+      "filename" : "1611850549-top-down-2.png",
       "idiom" : "universal",
       "scale" : "3x"
     }

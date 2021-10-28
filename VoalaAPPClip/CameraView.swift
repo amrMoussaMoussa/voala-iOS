@@ -8,6 +8,7 @@ The camera view shows the feed from the camera, and renders the points
 
 import UIKit
 import AVFoundation
+
 enum handType {
     case right
     case left
@@ -25,6 +26,7 @@ class CameraView: UIView {
     
     private var handDirection:HandDirection?
     private var handType:handType?
+    private var imageAngel:CGFloat = 0
     
 //    private var isRecentlyChangeHands:Bool = true
     
@@ -61,14 +63,15 @@ class CameraView: UIView {
     
     func showPoints(_ points: [CGPoint],midPOint:CGPoint,helperPOints:[CGPoint],wrist:CGPoint? ,color: UIColor) {
         pointsPath.removeAllPoints()
-        let ringWidth = midPOint.distance(from: points.first ?? .zero)
-        imageView.frame = CGRect(x: 0, y: 0, width: ringWidth, height: ringWidth)
-        let ringRightPOistion = CGPoint.midPoint(p1: midPOint, p2: points.first ?? .zero)
+        let ringWidth = (helperPOints.first?.distance(from: helperPOints.last ?? .zero) ?? .zero)/2
+//        imageView.frame = CGRect(x: 0, y: 0, width: ringWidth, height: ringWidth)
+        imageView.bounds = .init(x: 0, y: 0, width: ringWidth , height: ringWidth )
+        let ringRightPOistion = CGPoint.midPoint(p1:points.last ?? .zero, p2: points.first ?? .zero)
         
         if  handType == nil{ handType = getHandType(wrist:wrist, ringMcp: points.last )}
         
         handDirection = getHandDirection(middleMcp: helperPOints.last, little: helperPOints.first)
-        
+        getAngleRelateiveToXAxis(ringmcpPOint: points.first, ringPiPPoint: points.last)
         UpdateImageView(middlePOint: midPOint, helperPoints: helperPOints,ringPOint: ringRightPOistion)
         for point in points {
             pointsPath.move(to: point)
@@ -116,7 +119,8 @@ class CameraView: UIView {
         }
         
         imageView.image = handDirection == .up ?  Images.ringUpImage : Images.ringBackImage
-        print(handDirection)
+        
+        imageView.transform =  CGAffineTransform(rotationAngle: imageAngel)
         imageView.contentMode = handDirection == .up ? .scaleAspectFit:.scaleAspectFit
         imageView.center =  CGPoint(x: ringPOint.x, y: ringPOint.y)
         
@@ -138,6 +142,17 @@ class CameraView: UIView {
         }
         
         
+    }
+    
+    func getAngleRelateiveToXAxis(ringmcpPOint:CGPoint?,ringPiPPoint:CGPoint?){
+        guard let mcp = ringmcpPOint , let piP = ringPiPPoint else {
+            return
+        }
+        
+        imageAngel = atan2((mcp.y - piP.y), (mcp.x - piP.x)) + (CGFloat.pi / 2)
+        print(imageAngel)
+//        let degree = -(imageAngel*CGFloat(180)) / CGFloat(Double.pi)
+//        print(degree)
     }
     
  

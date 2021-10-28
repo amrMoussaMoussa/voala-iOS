@@ -1,17 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "ringBack.png",
+      "filename" : "1611850551-back (1).png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "ringBack-1.png",
+      "filename" : "1611850551-back (1)-1.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "ringBack-2.png",
+      "filename" : "1611850551-back (1)-2.png",
       "idiom" : "universal",
       "scale" : "3x"
     }
