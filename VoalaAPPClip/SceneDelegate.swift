@@ -17,6 +17,20 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // If using a storyboard, the `window` property will automatically be initialized and attached to the scene.
         // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
         guard let _ = (scene as? UIWindowScene) else { return }
+        // Get URL components from the incoming user activity.
+        guard let userActivity = connectionOptions.userActivities.first,
+            userActivity.activityType == NSUserActivityTypeBrowsingWeb,
+            let incomingURL = userActivity.webpageURL,
+            let components = NSURLComponents(url: incomingURL, resolvingAgainstBaseURL: true)
+        else {
+            return
+        }
+                
+        // log url
+        print("AppClip invocation url is : \(incomingURL)")
+        NetworkManager.shared.setRingID(url: incomingURL.absoluteString)
+        
+        
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {
@@ -47,6 +61,21 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // to restore the scene back to its current state.
     }
 
-
+    func scene(_ scene: UIScene, continue userActivity: NSUserActivity) {
+            // Get URL components from the incoming user activity
+            guard userActivity.activityType == NSUserActivityTypeBrowsingWeb,
+                  let incomingURL = userActivity.webpageURL,
+                  let components = NSURLComponents(url: incomingURL,
+                  resolvingAgainstBaseURL: true)
+            else {
+                return
+            }
+                  
+            // log url
+            print("AppClip invocation url is : \(incomingURL)")
+        NetworkManager.shared.`setRingID`(url: incomingURL.absoluteString)
+        }
+    
+   
 }
 

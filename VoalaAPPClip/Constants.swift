@@ -13,3 +13,8 @@ struct Images {
     static let ringBackImage = UIImage(named: "ringBack")
     
 }
+
+
+struct segues{
+    static let showCameraSegue = "showCameraSegue"
+}

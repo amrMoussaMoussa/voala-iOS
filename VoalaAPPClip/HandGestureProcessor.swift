@@ -13,63 +13,32 @@ import CoreGraphics
 import UIKit
 
 class HandGestureProcessor {
-//    enum State {
-//        case possiblePinch
-//        case pinched
-//        case possibleApart
-//        case apart
-//        case unknown
-//    }
-    
+
     typealias PointsPair = (ringPip: CGPoint, ringMcp: CGPoint)
-    typealias helperPair = (littleMcp: CGPoint, middleMcp: CGPoint)
+    typealias helperPair = (littleMcp: CGPoint?, indexMcp: CGPoint?)
     
-//    private var state = State.unknown {
-//        didSet {
-//            didChangeStateClosure?(state)
-//        }
-//    }
-//    private var pinchEvidenceCounter = 0
-//    private var apartEvidenceCounter = 0
-//    private let pinchMaxDistance: CGFloat
-//    private let evidenceCounterStateTrigger: Int
     
     var didChangeStateClosure: (() -> Void)?
     private (set) var lastProcessedPointsPair = PointsPair(.zero, .zero)
     private (set) var lastHelperPOints = helperPair(.zero,.zero)
-    private (set) var midPOint:CGPoint = .zero
+    private (set) var middleMcp:CGPoint = .zero
+    private (set) var ringPoint:CGPoint = .zero
     private (set) var wristPoint:CGPoint = .zero
-    init(pinchMaxDistance: CGFloat = 40, evidenceCounterStateTrigger: Int = 3) {
-//        self.pinchMaxDistance = pinchMaxDistance
-//        self.evidenceCounterStateTrigger = evidenceCounterStateTrigger
-    }
-    
+
     func reset() {
-//        state = .unknown
-//        pinchEvidenceCounter = 0
-//        apartEvidenceCounter = 0
+
     }
     
-    func processPointsPair(_ pointsPair: PointsPair,helperPOints:helperPair,wrist:CGPoint) {
+    func processPointsPair(_ pointsPair: PointsPair,helperPOints:helperPair,middleMcpPoint:CGPoint,wrist:CGPoint) {
         lastProcessedPointsPair = pointsPair
 //        let distance = pointsPair.ringPip.distance(from: pointsPair.ringMcp)
-        midPOint = CGPoint.midPoint(p1: pointsPair.ringPip, p2: pointsPair.ringMcp)
+        ringPoint = CGPoint.midPoint(p1: pointsPair.ringPip, p2: pointsPair.ringMcp)
         lastHelperPOints = helperPOints
         wristPoint = wrist
+        middleMcp = middleMcpPoint
+        
         didChangeStateClosure?()
-//        if distance < pinchMaxDistance {
-//            // Keep accumulating evidence for pinch state.
-//            pinchEvidenceCounter += 1
-//            apartEvidenceCounter = 0
-//            // Set new state based on evidence amount.
-//            state = (pinchEvidenceCounter >= evidenceCounterStateTrigger) ? .pinched : .possiblePinch
-//        } else {
-//            // Keep accumulating evidence for apart state.
-//            apartEvidenceCounter += 1
-//            pinchEvidenceCounter = 0
-//            // Set new state based on evidence amount.
-//            state = (apartEvidenceCounter >= evidenceCounterStateTrigger) ? .apart : .possibleApart
-//        }
+
     }
 }
 

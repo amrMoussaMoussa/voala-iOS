@@ -24,6 +24,8 @@
 	<true/>
     <key>NSCameraUsageDescription</key>
     <string>This application uses the camera to demonstrate new Vision technology.</string>
+<!--    <key>Privacy - Photo Library Usage Description</key>-->
+<!--    <string>we need to access photos to add screenshot.</string>-->
 	<key>NSAppClip</key>
 	<dict>
 		<key>NSAppClipRequestEphemeralUserNotification</key>

@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1F04DB342737C5B00048ED74 /* RingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F04DB332737C5B00048ED74 /* RingViewController.swift */; };
+		1F04DB352737C5B00048ED74 /* RingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F04DB332737C5B00048ED74 /* RingViewController.swift */; };
 		1F1544FF2726AFD1007D9407 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F1544FE2726AFD1007D9407 /* AppDelegate.swift */; };
 		1F1545012726AFD1007D9407 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F1545002726AFD1007D9407 /* SceneDelegate.swift */; };
 		1F1545032726AFD1007D9407 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F1545022726AFD1007D9407 /* ViewController.swift */; };
@@ -27,9 +29,50 @@
 		1F1545692726B0AE007D9407 /* CameraView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F1545672726B0AE007D9407 /* CameraView.swift */; };
 		1F15456C2726B0E9007D9407 /* HandGestureProcessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F15456A2726B0E9007D9407 /* HandGestureProcessor.swift */; };
 		1F15456D2726B3D2007D9407 /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F1545382726B008007D9407 /* CameraViewController.swift */; };
+		1F2E2E1E273182E000C00DB8 /* ScanningVeiw.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F2E2E1D273182E000C00DB8 /* ScanningVeiw.swift */; };
+		1F2E2E20273186BF00C00DB8 /* RingNameLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F2E2E1F273186BF00C00DB8 /* RingNameLabel.swift */; };
+		1F3969F7272C0C8500FE4256 /* ARSceneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F3969F6272C0C8500FE4256 /* ARSceneViewController.swift */; };
+		1F3969F8272C0C8500FE4256 /* ARSceneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F3969F6272C0C8500FE4256 /* ARSceneViewController.swift */; };
+		1F3969FA272C0CAB00FE4256 /* ARSceneView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F3969F9272C0CAB00FE4256 /* ARSceneView.swift */; };
+		1F3969FB272C0CAB00FE4256 /* ARSceneView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F3969F9272C0CAB00FE4256 /* ARSceneView.swift */; };
+		1F89434D273289C40048D915 /* hand_guide.gif in Resources */ = {isa = PBXBuildFile; fileRef = 1F89434C273289C40048D915 /* hand_guide.gif */; };
+		1F89434E273289C40048D915 /* hand_guide.gif in Resources */ = {isa = PBXBuildFile; fileRef = 1F89434C273289C40048D915 /* hand_guide.gif */; };
+		1F89435327328F160048D915 /* logo.gif in Resources */ = {isa = PBXBuildFile; fileRef = 1F89435227328F160048D915 /* logo.gif */; };
+		1F89435427328F160048D915 /* logo.gif in Resources */ = {isa = PBXBuildFile; fileRef = 1F89435227328F160048D915 /* logo.gif */; };
+		1F8943552732A7C80048D915 /* ScanningVeiw.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F2E2E1D273182E000C00DB8 /* ScanningVeiw.swift */; };
+		1F8943562732A7CB0048D915 /* RingNameLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F2E2E1F273186BF00C00DB8 /* RingNameLabel.swift */; };
+		1F8943582732A7DD0048D915 /* HandGestureProcessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F15456A2726B0E9007D9407 /* HandGestureProcessor.swift */; };
+		1F89435A2732AA3C0048D915 /* previwImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F8943592732AA3C0048D915 /* previwImageView.swift */; };
+		1F89435B2732AA3C0048D915 /* previwImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F8943592732AA3C0048D915 /* previwImageView.swift */; };
 		1F98BFF427270F3000AD775D /* CameraView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F1545672726B0AE007D9407 /* CameraView.swift */; };
 		1F98BFF62727F2B800AD775D /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F98BFF52727F2B800AD775D /* Constants.swift */; };
 		1F98BFF72727F2BB00AD775D /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F98BFF52727F2B800AD775D /* Constants.swift */; };
+		1FB24F57272EC4270040BD24 /* ship.scn in Resources */ = {isa = PBXBuildFile; fileRef = 1FB24F55272EC4270040BD24 /* ship.scn */; };
+		1FB24F58272EC4270040BD24 /* ship.scn in Resources */ = {isa = PBXBuildFile; fileRef = 1FB24F55272EC4270040BD24 /* ship.scn */; };
+		1FB24F59272EC4270040BD24 /* texture.png in Resources */ = {isa = PBXBuildFile; fileRef = 1FB24F56272EC4270040BD24 /* texture.png */; };
+		1FB24F5A272EC4270040BD24 /* texture.png in Resources */ = {isa = PBXBuildFile; fileRef = 1FB24F56272EC4270040BD24 /* texture.png */; };
+		1FB24F5C272EC6FA0040BD24 /* Ring.obj in Resources */ = {isa = PBXBuildFile; fileRef = 1FB24F5B272EC6FA0040BD24 /* Ring.obj */; };
+		1FB24F5D272EC6FA0040BD24 /* Ring.obj in Resources */ = {isa = PBXBuildFile; fileRef = 1FB24F5B272EC6FA0040BD24 /* Ring.obj */; };
+		1FB24F60272ED3D00040BD24 /* the_crowned_ring.obj in Resources */ = {isa = PBXBuildFile; fileRef = 1FB24F5E272ED3D00040BD24 /* the_crowned_ring.obj */; };
+		1FB24F61272ED3D00040BD24 /* the_crowned_ring.obj in Resources */ = {isa = PBXBuildFile; fileRef = 1FB24F5E272ED3D00040BD24 /* the_crowned_ring.obj */; };
+		1FB24F62272ED3D00040BD24 /* the_crowned_ring.mtl in Resources */ = {isa = PBXBuildFile; fileRef = 1FB24F5F272ED3D00040BD24 /* the_crowned_ring.mtl */; };
+		1FB24F63272ED3D00040BD24 /* the_crowned_ring.mtl in Resources */ = {isa = PBXBuildFile; fileRef = 1FB24F5F272ED3D00040BD24 /* the_crowned_ring.mtl */; };
+		1FB24F66272ED96E0040BD24 /* converse_obj.mtl in Resources */ = {isa = PBXBuildFile; fileRef = 1FB24F64272ED96D0040BD24 /* converse_obj.mtl */; };
+		1FB24F67272ED96E0040BD24 /* converse_obj.mtl in Resources */ = {isa = PBXBuildFile; fileRef = 1FB24F64272ED96D0040BD24 /* converse_obj.mtl */; };
+		1FB24F68272ED96E0040BD24 /* converse_obj.obj in Resources */ = {isa = PBXBuildFile; fileRef = 1FB24F65272ED96E0040BD24 /* converse_obj.obj */; };
+		1FB24F69272ED96E0040BD24 /* converse_obj.obj in Resources */ = {isa = PBXBuildFile; fileRef = 1FB24F65272ED96E0040BD24 /* converse_obj.obj */; };
+		1FB24F6C272EF80B0040BD24 /* Ring_2.mtl in Resources */ = {isa = PBXBuildFile; fileRef = 1FB24F6A272EF80B0040BD24 /* Ring_2.mtl */; };
+		1FB24F6D272EF80B0040BD24 /* Ring_2.mtl in Resources */ = {isa = PBXBuildFile; fileRef = 1FB24F6A272EF80B0040BD24 /* Ring_2.mtl */; };
+		1FB24F6E272EF80B0040BD24 /* Ring_2.obj in Resources */ = {isa = PBXBuildFile; fileRef = 1FB24F6B272EF80B0040BD24 /* Ring_2.obj */; };
+		1FB24F6F272EF80B0040BD24 /* Ring_2.obj in Resources */ = {isa = PBXBuildFile; fileRef = 1FB24F6B272EF80B0040BD24 /* Ring_2.obj */; };
+		1FB5691F2733D58000BD13D8 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FB5691E2733D58000BD13D8 /* NetworkManager.swift */; };
+		1FB569202733D58300BD13D8 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FB5691E2733D58000BD13D8 /* NetworkManager.swift */; };
+		1FDEB58A272C2C14003054BD /* Rose Gold Diamond.glb in Resources */ = {isa = PBXBuildFile; fileRef = 1FDEB588272C2C13003054BD /* Rose Gold Diamond.glb */; };
+		1FDEB58B272C2C14003054BD /* Rose Gold Diamond.glb in Resources */ = {isa = PBXBuildFile; fileRef = 1FDEB588272C2C13003054BD /* Rose Gold Diamond.glb */; };
+		1FDEB58C272C2C14003054BD /* RoseGolddiamond.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 1FDEB589272C2C13003054BD /* RoseGolddiamond.usdz */; };
+		1FDEB58D272C2C14003054BD /* RoseGolddiamond.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 1FDEB589272C2C13003054BD /* RoseGolddiamond.usdz */; };
+		1FE7BC3F272C8CC000B32C05 /* Ring.mtl in Resources */ = {isa = PBXBuildFile; fileRef = 1FE7BC3D272C8CC000B32C05 /* Ring.mtl */; };
+		1FE7BC40272C8CC000B32C05 /* Ring.mtl in Resources */ = {isa = PBXBuildFile; fileRef = 1FE7BC3D272C8CC000B32C05 /* Ring.mtl */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -85,6 +128,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		1F04DB332737C5B00048ED74 /* RingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RingViewController.swift; sourceTree = "<group>"; };
 		1F1544FB2726AFD1007D9407 /* VoalaaAR.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VoalaaAR.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1F1544FE2726AFD1007D9407 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1F1545002726AFD1007D9407 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -116,7 +160,27 @@
 		1F1545592726B00B007D9407 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1F1545672726B0AE007D9407 /* CameraView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraView.swift; sourceTree = "<group>"; };
 		1F15456A2726B0E9007D9407 /* HandGestureProcessor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HandGestureProcessor.swift; sourceTree = "<group>"; };
+		1F2E2E1D273182E000C00DB8 /* ScanningVeiw.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanningVeiw.swift; sourceTree = "<group>"; };
+		1F2E2E1F273186BF00C00DB8 /* RingNameLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RingNameLabel.swift; sourceTree = "<group>"; };
+		1F3969F6272C0C8500FE4256 /* ARSceneViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARSceneViewController.swift; sourceTree = "<group>"; };
+		1F3969F9272C0CAB00FE4256 /* ARSceneView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARSceneView.swift; sourceTree = "<group>"; };
+		1F89434C273289C40048D915 /* hand_guide.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = hand_guide.gif; sourceTree = "<group>"; };
+		1F89435227328F160048D915 /* logo.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = logo.gif; sourceTree = "<group>"; };
+		1F8943592732AA3C0048D915 /* previwImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = previwImageView.swift; sourceTree = "<group>"; };
 		1F98BFF52727F2B800AD775D /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		1FB24F55272EC4270040BD24 /* ship.scn */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = ship.scn; sourceTree = "<group>"; };
+		1FB24F56272EC4270040BD24 /* texture.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = texture.png; sourceTree = "<group>"; };
+		1FB24F5B272EC6FA0040BD24 /* Ring.obj */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = Ring.obj; path = "../../../../Downloads/BJG 3D models 2/Brown RIngs OBJ/Ring.obj"; sourceTree = "<group>"; };
+		1FB24F5E272ED3D00040BD24 /* the_crowned_ring.obj */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = the_crowned_ring.obj; sourceTree = "<group>"; };
+		1FB24F5F272ED3D00040BD24 /* the_crowned_ring.mtl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = the_crowned_ring.mtl; sourceTree = "<group>"; };
+		1FB24F64272ED96D0040BD24 /* converse_obj.mtl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = converse_obj.mtl; sourceTree = "<group>"; };
+		1FB24F65272ED96E0040BD24 /* converse_obj.obj */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = converse_obj.obj; sourceTree = "<group>"; };
+		1FB24F6A272EF80B0040BD24 /* Ring_2.mtl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Ring_2.mtl; sourceTree = "<group>"; };
+		1FB24F6B272EF80B0040BD24 /* Ring_2.obj */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Ring_2.obj; sourceTree = "<group>"; };
+		1FB5691E2733D58000BD13D8 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		1FDEB588272C2C13003054BD /* Rose Gold Diamond.glb */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Rose Gold Diamond.glb"; sourceTree = "<group>"; };
+		1FDEB589272C2C13003054BD /* RoseGolddiamond.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = RoseGolddiamond.usdz; sourceTree = "<group>"; };
+		1FE7BC3D272C8CC000B32C05 /* Ring.mtl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = Ring.mtl; path = "../../../../Downloads/BJG 3D models 2/Brown RIngs OBJ/Ring.mtl"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -228,15 +292,36 @@
 			children = (
 				1F1545342726B008007D9407 /* AppDelegate.swift */,
 				1F1545362726B008007D9407 /* SceneDelegate.swift */,
+				1F3969F6272C0C8500FE4256 /* ARSceneViewController.swift */,
+				1F3969F9272C0CAB00FE4256 /* ARSceneView.swift */,
 				1F1545382726B008007D9407 /* CameraViewController.swift */,
 				1F1545672726B0AE007D9407 /* CameraView.swift */,
+				1F8943592732AA3C0048D915 /* previwImageView.swift */,
 				1F15456A2726B0E9007D9407 /* HandGestureProcessor.swift */,
+				1F04DB332737C5B00048ED74 /* RingViewController.swift */,
 				1F15453A2726B008007D9407 /* Main.storyboard */,
 				1F98BFF52727F2B800AD775D /* Constants.swift */,
 				1F15453D2726B00A007D9407 /* Assets.xcassets */,
+				1FB24F5F272ED3D00040BD24 /* the_crowned_ring.mtl */,
+				1FB24F5E272ED3D00040BD24 /* the_crowned_ring.obj */,
+				1FE7BC3D272C8CC000B32C05 /* Ring.mtl */,
+				1FB24F6A272EF80B0040BD24 /* Ring_2.mtl */,
+				1FB24F6B272EF80B0040BD24 /* Ring_2.obj */,
+				1FB24F64272ED96D0040BD24 /* converse_obj.mtl */,
+				1FB24F65272ED96E0040BD24 /* converse_obj.obj */,
+				1FB24F5B272EC6FA0040BD24 /* Ring.obj */,
+				1FB24F55272EC4270040BD24 /* ship.scn */,
+				1FB24F56272EC4270040BD24 /* texture.png */,
+				1F89434C273289C40048D915 /* hand_guide.gif */,
+				1F89435227328F160048D915 /* logo.gif */,
+				1FDEB588272C2C13003054BD /* Rose Gold Diamond.glb */,
+				1FDEB589272C2C13003054BD /* RoseGolddiamond.usdz */,
 				1F15453F2726B00A007D9407 /* LaunchScreen.storyboard */,
 				1F1545422726B00A007D9407 /* Info.plist */,
 				1F1545432726B00A007D9407 /* VoalaAPPClip.entitlements */,
+				1F2E2E1D273182E000C00DB8 /* ScanningVeiw.swift */,
+				1F2E2E1F273186BF00C00DB8 /* RingNameLabel.swift */,
+				1FB5691E2733D58000BD13D8 /* NetworkManager.swift */,
 			);
 			path = VoalaAPPClip;
 			sourceTree = "<group>";
@@ -432,8 +517,22 @@
 			buildActionMask = 2147483647;
 			files = (
 				1F15450B2726AFD4007D9407 /* LaunchScreen.storyboard in Resources */,
+				1FE7BC3F272C8CC000B32C05 /* Ring.mtl in Resources */,
+				1FB24F6C272EF80B0040BD24 /* Ring_2.mtl in Resources */,
+				1FDEB58A272C2C14003054BD /* Rose Gold Diamond.glb in Resources */,
+				1FB24F59272EC4270040BD24 /* texture.png in Resources */,
+				1FB24F5C272EC6FA0040BD24 /* Ring.obj in Resources */,
+				1FB24F68272ED96E0040BD24 /* converse_obj.obj in Resources */,
 				1F1545082726AFD4007D9407 /* Assets.xcassets in Resources */,
+				1FB24F60272ED3D00040BD24 /* the_crowned_ring.obj in Resources */,
 				1F1545062726AFD1007D9407 /* Main.storyboard in Resources */,
+				1F89434D273289C40048D915 /* hand_guide.gif in Resources */,
+				1FDEB58C272C2C14003054BD /* RoseGolddiamond.usdz in Resources */,
+				1FB24F57272EC4270040BD24 /* ship.scn in Resources */,
+				1F89435327328F160048D915 /* logo.gif in Resources */,
+				1FB24F6E272EF80B0040BD24 /* Ring_2.obj in Resources */,
+				1FB24F66272ED96E0040BD24 /* converse_obj.mtl in Resources */,
+				1FB24F62272ED3D00040BD24 /* the_crowned_ring.mtl in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -456,8 +555,22 @@
 			buildActionMask = 2147483647;
 			files = (
 				1F1545412726B00A007D9407 /* LaunchScreen.storyboard in Resources */,
+				1FE7BC40272C8CC000B32C05 /* Ring.mtl in Resources */,
+				1FB24F6D272EF80B0040BD24 /* Ring_2.mtl in Resources */,
+				1FDEB58B272C2C14003054BD /* Rose Gold Diamond.glb in Resources */,
+				1FB24F5A272EC4270040BD24 /* texture.png in Resources */,
+				1FB24F5D272EC6FA0040BD24 /* Ring.obj in Resources */,
+				1FB24F69272ED96E0040BD24 /* converse_obj.obj in Resources */,
 				1F15453E2726B00A007D9407 /* Assets.xcassets in Resources */,
+				1FB24F61272ED3D00040BD24 /* the_crowned_ring.obj in Resources */,
 				1F15453C2726B008007D9407 /* Main.storyboard in Resources */,
+				1F89434E273289C40048D915 /* hand_guide.gif in Resources */,
+				1FDEB58D272C2C14003054BD /* RoseGolddiamond.usdz in Resources */,
+				1FB24F58272EC4270040BD24 /* ship.scn in Resources */,
+				1F89435427328F160048D915 /* logo.gif in Resources */,
+				1FB24F6F272EF80B0040BD24 /* Ring_2.obj in Resources */,
+				1FB24F67272ED96E0040BD24 /* converse_obj.mtl in Resources */,
+				1FB24F63272ED3D00040BD24 /* the_crowned_ring.mtl in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -482,10 +595,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1F3969FA272C0CAB00FE4256 /* ARSceneView.swift in Sources */,
 				1F1545032726AFD1007D9407 /* ViewController.swift in Sources */,
+				1F3969F7272C0C8500FE4256 /* ARSceneViewController.swift in Sources */,
+				1FB569202733D58300BD13D8 /* NetworkManager.swift in Sources */,
 				1F1544FF2726AFD1007D9407 /* AppDelegate.swift in Sources */,
 				1F15456D2726B3D2007D9407 /* CameraViewController.swift in Sources */,
+				1F04DB342737C5B00048ED74 /* RingViewController.swift in Sources */,
+				1F8943562732A7CB0048D915 /* RingNameLabel.swift in Sources */,
 				1F98BFF427270F3000AD775D /* CameraView.swift in Sources */,
+				1F89435A2732AA3C0048D915 /* previwImageView.swift in Sources */,
+				1F8943582732A7DD0048D915 /* HandGestureProcessor.swift in Sources */,
+				1F8943552732A7C80048D915 /* ScanningVeiw.swift in Sources */,
 				1F1545012726AFD1007D9407 /* SceneDelegate.swift in Sources */,
 				1F98BFF62727F2B800AD775D /* Constants.swift in Sources */,
 			);
@@ -511,10 +632,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1FB5691F2733D58000BD13D8 /* NetworkManager.swift in Sources */,
+				1F3969FB272C0CAB00FE4256 /* ARSceneView.swift in Sources */,
+				1F04DB352737C5B00048ED74 /* RingViewController.swift in Sources */,
 				1F15456C2726B0E9007D9407 /* HandGestureProcessor.swift in Sources */,
+				1F3969F8272C0C8500FE4256 /* ARSceneViewController.swift in Sources */,
 				1F1545392726B008007D9407 /* CameraViewController.swift in Sources */,
 				1F1545352726B008007D9407 /* AppDelegate.swift in Sources */,
+				1F2E2E20273186BF00C00DB8 /* RingNameLabel.swift in Sources */,
+				1F89435B2732AA3C0048D915 /* previwImageView.swift in Sources */,
 				1F1545372726B008007D9407 /* SceneDelegate.swift in Sources */,
+				1F2E2E1E273182E000C00DB8 /* ScanningVeiw.swift in Sources */,
 				1F1545692726B0AE007D9407 /* CameraView.swift in Sources */,
 				1F98BFF72727F2BB00AD775D /* Constants.swift in Sources */,
 			);
