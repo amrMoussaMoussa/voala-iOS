@@ -7,16 +7,22 @@
 import UIKit
 import AVFoundation
 import Vision
+protocol imageCapturedProtocl{
+    func imageCaptured()
+    func imagePreiviewCanceled()
+}
 
-class CameraViewController: UIViewController {
+class CameraViewController: UIViewController, imageCapturedProtocl ,AVCapturePhotoCaptureDelegate{
+    
+    
 
     private var cameraView: CameraView { view as! CameraView }
     
     private let videoDataOutputQueue = DispatchQueue(label: "CameraFeedDataOutput", qos: .userInteractive)
     private var cameraFeedSession: AVCaptureSession?
+    private let photoOutput = AVCapturePhotoOutput()
     private var handPoseRequest = VNDetectHumanHandPoseRequest()
     
-    private let drawOverlay = CAShapeLayer()
     private let drawPath = UIBezierPath()
     private var evidenceBuffer = [HandGestureProcessor.PointsPair]()
     private var lastDrawPoint: CGPoint?
@@ -27,26 +33,42 @@ class CameraViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        drawOverlay.frame = view.layer.bounds
-        drawOverlay.lineWidth = 5
-        drawOverlay.backgroundColor = #colorLiteral(red: 0.9999018312, green: 1, blue: 0.9998798966, alpha: 0.5).cgColor
-        drawOverlay.strokeColor = #colorLiteral(red: 0.6, green: 0.1, blue: 0.3, alpha: 1).cgColor
-        drawOverlay.fillColor = #colorLiteral(red: 0.9999018312, green: 1, blue: 0.9998798966, alpha: 0).cgColor
-        drawOverlay.lineCap = .round
-        view.layer.addSublayer(drawOverlay)
         // This sample app detects one hand only.
+        
         handPoseRequest.maximumHandCount = 1
+        
         // Add state change handler to hand gesture processor.
         gestureProcessor.didChangeStateClosure = { [weak self] in
             self?.handleGestureStateChange(/*state: state*/)
         }
-        // Add double tap gesture recognizer for clearing the draw path.
-//        let recognizer = UITapGestureRecognizer(target: self, action: #selector(handleGesture(_:)))
-//        recognizer.numberOfTouchesRequired = 1
-//        recognizer.numberOfTapsRequired = 2
-//        view.addGestureRecognizer(recognizer)
+        configureCaptureImage()
     }
-
+    
+    func configureCaptureImage(){
+        cameraView.imageCaptureDelegate = self
+    }
+    
+    func imageCaptured() {
+        cameraFeedSession?.stopRunning()
+    }
+    
+    func imagePreiviewCanceled(){
+        cameraFeedSession?.startRunning()
+    }
+    
+//    func photoOutput(_ output: AVCapturePhotoOutput, didFinishProcessingPhoto photo: AVCapturePhoto, error: Error?) {
+//        guard let imageData = photo.fileDataRepresentation() else {
+//            return }
+//        let previewImage = UIImage(data: imageData)
+//        
+//        let previewImageView = PreviewImageView()
+//        previewImageView.modalPresentationStyle = .fullScreen
+//        present(previewImageView, animated: true)
+//        previewImageView.addImage(ringImage: ringImage.ring, handImage: previewImage,frame: ringImage.frame,center:ringorientation.center,angel:ringorientation.angel)
+//    }
+    
+            
+        
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         do {
@@ -65,6 +87,8 @@ class CameraViewController: UIViewController {
         cameraFeedSession?.stopRunning()
         super.viewWillDisappear(animated)
     }
+    
+  
     
     func setupAVSession() throws {
         // Select a front facing camera, make an input.
@@ -96,123 +120,78 @@ class CameraViewController: UIViewController {
         } else {
             throw AppError.captureSessionSetup(reason: "Could not add video data output to the session")
         }
+        
+        
+        if session.canAddOutput(photoOutput) {
+            session.addOutput(photoOutput)
+        } else {
+            throw AppError.captureSessionSetup(reason: "Could not add photo output to the session")
+        }
+        
         session.commitConfiguration()
         cameraFeedSession = session
 }
     
-    func processPoints(ringPip: CGPoint?, ringMcp: CGPoint?,littleMcp:CGPoint?,midlleMcp:CGPoint?,wrist:CGPoint?) {
+    func processPoints(ringPip: CGPoint?, ringMcp: CGPoint?,littleMcp:CGPoint?,midlleMcp:CGPoint?,indexMcp:CGPoint?,wrist:CGPoint?) {
         // Check that we have both points.
-        guard let ringPip = ringPip, let ringMcp = ringMcp ,let littleMcp = littleMcp ,let middleMcp = midlleMcp , let wrist = wrist else {
+        guard let ringPip = ringPip, let ringMcp = ringMcp ,let middleMcp = midlleMcp , let wrist = wrist else {
             // If there were no observations for more than 2 seconds reset gesture processor.
             if Date().timeIntervalSince(lastObservationTimestamp) > 2 {
                 gestureProcessor.reset()
             }
-            cameraView.showPoints([], midPOint: .zero, helperPOints: [], wrist: wrist, color: .clear)
+            cameraView.showPoints([], midPOint: .zero, helperPOints: [],middleMcp: .zero ,wrist: wrist, color: .clear)
             return
         }
-        
-        // Convert points from AVFoundation coordinates to UIKit coordinates.
         let previewLayer = cameraView.previewLayer
+       
+        var littleMcpConverted:CGPoint?
+        var indexMcpConverted:CGPoint?
+        
+        if let litlleMcpPOint = littleMcp{
+        littleMcpConverted = previewLayer.layerPointConverted(fromCaptureDevicePoint: litlleMcpPOint )
+        }
+        
+        if let indexMcpPOint = indexMcp{
+            indexMcpConverted = previewLayer.layerPointConverted(fromCaptureDevicePoint: indexMcpPOint )
+        }
+        // Convert points from AVFoundation coordinates to UIKit coordinates.
+       
         let ringPipPointConverted = previewLayer.layerPointConverted(fromCaptureDevicePoint: ringPip)
         let ringMcpPointConverted = previewLayer.layerPointConverted(fromCaptureDevicePoint: ringMcp)
-        let littleMcpPointConverted = previewLayer.layerPointConverted(fromCaptureDevicePoint: littleMcp)
+      
         let middleMcpPointConverted = previewLayer.layerPointConverted(fromCaptureDevicePoint: middleMcp)
         let wristPointConverted = previewLayer.layerPointConverted(fromCaptureDevicePoint: wrist)
         // Process new points
-        gestureProcessor.processPointsPair((ringPipPointConverted, ringMcpPointConverted), helperPOints: (littleMcpPointConverted,middleMcpPointConverted),wrist:wristPointConverted)
+        gestureProcessor.processPointsPair((ringPipPointConverted, ringMcpPointConverted), helperPOints: (littleMcpConverted,indexMcpConverted),middleMcpPoint: middleMcpPointConverted,wrist:wristPointConverted)
     }
     
     private func handleGestureStateChange(/*state: HandGestureProcessor.State*/) {
         let pointsPair = gestureProcessor.lastProcessedPointsPair
-        let midPoint = gestureProcessor.midPOint
+        let midPoint = gestureProcessor.ringPoint
         let helperPOints = gestureProcessor.lastHelperPOints
         let wrist  = gestureProcessor.wristPoint
-        let tipsColor: UIColor = .clear
-//        switch state {
-//        case .possiblePinch, .possibleApart:
-//            // We are in one of the "possible": states, meaning there is not enough evidence yet to determine
-//            // if we want to draw or not. For now, collect points in the evidence buffer, so we can add them
-//            // to a drawing path when required.
-//            evidenceBuffer.append(pointsPair)
-//            tipsColor = .orange
-//        case .pinched:
-//            // We have enough evidence to draw. Draw the points collected in the evidence buffer, if any.
-//            for bufferedPoints in evidenceBuffer {
-//                updatePath(with: bufferedPoints, isLastPointsPair: false)
-//            }
-//            // Clear the evidence buffer.
-//            evidenceBuffer.removeAll()
-//            // Finally, draw the current point.
-//            updatePath(with: pointsPair, isLastPointsPair: false)
-//            tipsColor = .green
-//        case .apart, .unknown:
-//            // We have enough evidence to not draw. Discard any evidence buffer points.
-//            evidenceBuffer.removeAll()
-//            // And draw the last segment of our draw path.
-//            updatePath(with: pointsPair, isLastPointsPair: true)
-//            tipsColor = .red
-//        }
-        cameraView.showPoints([pointsPair.ringPip, pointsPair.ringMcp], midPOint: midPoint, helperPOints: [helperPOints.littleMcp,helperPOints.middleMcp], wrist: wrist ,color: tipsColor)
-    }
-    
-    private func updatePath(with points: HandGestureProcessor.PointsPair, isLastPointsPair: Bool) {
-        // Get the mid point between the tips.
-        let (thumbTip, indexTip) = points
-        let drawPoint = CGPoint.midPoint(p1: thumbTip, p2: indexTip)
+        let middleMcp = gestureProcessor.middleMcp
+        let tipsColor: UIColor = .white
 
-        if isLastPointsPair {
-            if let lastPoint = lastDrawPoint {
-                // Add a straight line from the last midpoint to the end of the stroke.
-                drawPath.addLine(to: lastPoint)
-            }
-            // We are done drawing, so reset the last draw point.
-            lastDrawPoint = nil
-        } else {
-            if lastDrawPoint == nil {
-                // This is the beginning of the stroke.
-                drawPath.move(to: drawPoint)
-                isFirstSegment = true
-            } else {
-                let lastPoint = lastDrawPoint!
-                // Get the midpoint between the last draw point and the new point.
-                let midPoint = CGPoint.midPoint(p1: lastPoint, p2: drawPoint)
-                if isFirstSegment {
-                    // If it's the first segment of the stroke, draw a line to the midpoint.
-                    drawPath.addLine(to: midPoint)
-                    isFirstSegment = false
-                } else {
-                    // Otherwise, draw a curve to a midpoint using the last draw point as a control point.
-                    drawPath.addQuadCurve(to: midPoint, controlPoint: lastPoint)
-                }
-            }
-            // Remember the last draw point for the next update pass.
-            lastDrawPoint = drawPoint
-        }
-        // Update the path on the overlay layer.
-        drawOverlay.path = drawPath.cgPath
+        cameraView.showPoints([pointsPair.ringPip, pointsPair.ringMcp], midPOint: midPoint, helperPOints: [helperPOints.indexMcp,helperPOints.littleMcp], middleMcp:middleMcp,wrist: wrist,color: tipsColor)
     }
     
-    @IBAction func handleGesture(_ gesture: UITapGestureRecognizer) {
-        guard gesture.state == .ended else {
-            return
-        }
-        evidenceBuffer.removeAll()
-        drawPath.removeAllPoints()
-        drawOverlay.path = drawPath.cgPath
-    }
 }
 
 extension CameraViewController: AVCaptureVideoDataOutputSampleBufferDelegate {
     public func captureOutput(_ output: AVCaptureOutput, didOutput sampleBuffer: CMSampleBuffer, from connection: AVCaptureConnection) {
         var pipPOint: CGPoint?
         var mcpPoint: CGPoint?
-        var littleMcp:CGPoint?
         var middleMcp:CGPoint?
+        
+        var littleMcp:CGPoint?
+        var indexMcp:CGPoint?
+        
         var wrist:CGPoint?
         
         defer {
             DispatchQueue.main.sync {
-                self.processPoints(ringPip: pipPOint, ringMcp: mcpPoint,littleMcp: littleMcp,midlleMcp: middleMcp,wrist:wrist)
+                self.processPoints(ringPip: pipPOint, ringMcp: mcpPoint,littleMcp: littleMcp,midlleMcp: middleMcp, indexMcp: indexMcp,wrist:wrist)
             }
         }
 
@@ -225,35 +204,40 @@ extension CameraViewController: AVCaptureVideoDataOutputSampleBufferDelegate {
             guard let observation = handPoseRequest.results?.first else {
                 return
             }
-            // Get points for thumb and index finger.
+       
             
-            
-            let ringPoints = try observation.recognizedPoints(.ringFinger)
-            
-            
-            // get helper points
-            // little finger.
-            let littleFinger = try observation.recognizedPoints(.littleFinger)
-            let middleFinger = try observation.recognizedPoints(.middleFinger)
+//            let ringPoints = try observation.recognizedPoints(.ringFinger)
+    
+//            let littleFinger = try observation.recognizedPoints(.littleFinger)
+//            let middleFinger = try observation.recognizedPoints(.middleFinger)
+//            let indexFinger = try observation.recognizedPoints(.indexFinger)
             let wristPOint = try observation.recognizedPoints(.all)
             
             // Look for tip points.
-            guard let pipPointsRaw = ringPoints[.ringPIP], let mcpPointRaw = ringPoints[.ringMCP],let wristRaw = wristPOint[.wrist] else {
+            guard let pipPointsRaw = wristPOint[.ringPIP], let mcpPointRaw = wristPOint[.ringMCP],let wristRaw = wristPOint[.wrist] else {
                 return
             }
             
-            guard let littleMcpPointsRaw = littleFinger[.littleMCP], let middleMcpPointRaw = middleFinger[.middleMCP] else {
+            guard  let middleMcpPointRaw = wristPOint[.middleMCP] else {
                 return
             }
+             
+            if  let littleMcpPointsRaw = wristPOint[.littleMCP],littleMcpPointsRaw.confidence > 0.3{
+                littleMcp = CGPoint(x: littleMcpPointsRaw.location.x , y: 1 - littleMcpPointsRaw.location.y)
+            }
+            
+            if let indexMcpPointRaw = wristPOint[.indexMCP],indexMcpPointRaw.confidence > 0.3 {
+                indexMcp = CGPoint(x: indexMcpPointRaw.location.x , y: 1 - indexMcpPointRaw.location.y)
+            }
+            
             
             // Ignore low confidence points.
-            guard pipPointsRaw.confidence > 0.3 && mcpPointRaw.confidence > 0.3 && littleMcpPointsRaw.confidence > 0.3 && middleMcpPointRaw.confidence > 0.3 && wristRaw.confidence > 0.3 else {
+            guard pipPointsRaw.confidence > 0.3 && mcpPointRaw.confidence > 0.3  && middleMcpPointRaw.confidence > 0.3 && wristRaw.confidence > 0.3 else {
                 return
             }
             // Convert points from Vision coordinates to AVFoundation coordinates.
             pipPOint = CGPoint(x: pipPointsRaw.location.x, y: 1 - pipPointsRaw.location.y)
             mcpPoint = CGPoint(x: mcpPointRaw.location.x, y: 1 - mcpPointRaw.location.y)
-            littleMcp = CGPoint(x: littleMcpPointsRaw.location.x, y: 1 - littleMcpPointsRaw.location.y)
             middleMcp = CGPoint(x: middleMcpPointRaw.location.x, y: 1 - middleMcpPointRaw.location.y)
             wrist = CGPoint(x: wristRaw.location.x, y: 1 - wristRaw.location.y)
         } catch {

@@ -128,6 +128,7 @@ class previewImageV: UIView {
             buyButton.heightAnchor.constraint(equalToConstant: 50),
         ])
         exitButton.addTarget(self, action: #selector(dimiss), for: .touchUpInside)
+        
         translatesAutoresizingMaskIntoConstraints = false
     }
     

@@ -21,7 +21,9 @@ enum HandDirection{
     case back
 }
 
-class CameraView: UIView, SCNSceneRendererDelegate{
+class CameraView: UIView, SCNSceneRendererDelegate, optionRingSelectedProtocol{
+  
+    
     
     private var overlayLayer = CAShapeLayer()
     private var pointsPath = UIBezierPath()
@@ -49,9 +51,15 @@ class CameraView: UIView, SCNSceneRendererDelegate{
     var scannigngView:ScainnigView?
     let ringInfoLabel = RingNameLabel()
     
-    //    private var isRecentlyChangeHands:Bool = true
+    
+    let ringOptionView = RingOptionsView()
+    var currntRing:Ring?
     
     let screenShot = UIButton()
+    
+    let padding:CGFloat = 20
+    
+    
     
     var previewLayer: AVCaptureVideoPreviewLayer {
         return layer as! AVCaptureVideoPreviewLayer
@@ -71,6 +79,7 @@ class CameraView: UIView, SCNSceneRendererDelegate{
 //        createGeometry()
 //        creatRing()
         rotateRing()
+        setOPtionRings()
     }
     
     required init?(coder: NSCoder) {
@@ -83,6 +92,7 @@ class CameraView: UIView, SCNSceneRendererDelegate{
 //        createGeometry()
 //        creatRing()
         rotateRing()
+        setOPtionRings()
     }
     
     override func layoutSublayers(of layer: CALayer) {
@@ -105,7 +115,6 @@ class CameraView: UIView, SCNSceneRendererDelegate{
     private func configureScene(){
         let ringName = NetworkManager.shared.ringID == "2" ? "Ring.obj":"RoseGolddiamond.usdz"
         ringScene = SCNScene(named: ringName)
-//        ringScene.rootNode.childNodes.first?.scale = .init(1, 1, 1)
         ringView.scene = ringScene
         ringView.isPlaying = true
     }
@@ -113,9 +122,7 @@ class CameraView: UIView, SCNSceneRendererDelegate{
     private func configureCamera(){
         cameraNode = SCNNode()
         cameraNode.camera = SCNCamera()
-        
         cameraNode.position = SCNVector3(0, 0, 4)
-        
         ringScene.rootNode.addChildNode(cameraNode)
         ringView.pointOfView = cameraNode
 //        let camera = SCNCamera()
@@ -156,6 +163,7 @@ class CameraView: UIView, SCNSceneRendererDelegate{
         ringInfoLabel.text = "Diamond Ring 100$"
         ringInfoLabel.isHidden = true
         screenShot.isHidden = true
+        ringOptionView.isHidden = true
 //        configureSCeneObject()
         
         screenShot.translatesAutoresizingMaskIntoConstraints = false
@@ -167,11 +175,20 @@ class CameraView: UIView, SCNSceneRendererDelegate{
             screenShot.heightAnchor.constraint(equalTo: screenShot.widthAnchor)
         ])
         screenShot.setImage(UIImage(named: "btn"), for: [])
-        UIImageWriteToSavedPhotosAlbum(UIImage(named: "btn")!, nil, nil, nil)
+//        UIImageWriteToSavedPhotosAlbum(UIImage(named: "btn")!, nil, nil, nil)
         screenShot.imageView?.contentMode = .scaleAspectFit
         screenShot.addTarget(self, action: #selector(captureScreenshot), for: .touchUpInside)
         
-       
+        addSubview(ringOptionView)
+        
+        NSLayoutConstraint.activate([
+            ringOptionView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: padding),
+            ringOptionView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -padding),
+            ringOptionView.bottomAnchor.constraint(equalTo: screenShot.topAnchor, constant: -10),
+            ringOptionView.heightAnchor.constraint(equalToConstant: 100),
+        ])
+        ringOptionView.opptionRingSelected = self
+        
     }
     
     func configureSCeneObject(){
@@ -262,7 +279,7 @@ class CameraView: UIView, SCNSceneRendererDelegate{
         // Fallback on earlier versions
         
         handDirection = getHandDirection(middleMcp:middleMcp ,ringMcp: points.last, little: helperPOints.last  as? CGPoint)
-        handDirection == .up ? (cameraNode.position.z = 4):(cameraNode.position.z = 2)
+//        handDirection == .up ? (cameraNode.position.z = 4):(cameraNode.position.z = 2)
         getAngleRelateiveToZAxis(ringmcpPOint: points.last, ringPiPPoint: points.first)
         getAngeRelativeToYAxis(points:points,helperPOints:helperPOints,middle:middleMcp)
         getAngelRelativeToXAxis()
@@ -328,6 +345,7 @@ class CameraView: UIView, SCNSceneRendererDelegate{
             handDirection = nil
             ringInfoLabel.isHidden  = true
             screenShot.isHidden = true
+            ringOptionView.isHidden  = true
             addScnningView()
             return
         }
@@ -353,6 +371,7 @@ class CameraView: UIView, SCNSceneRendererDelegate{
         ringInfoLabel.center = CGPoint(x: ringPOint.x - 50 , y: ringPOint.y - 200 )
         ringInfoLabel.isHidden  = false
         screenShot.isHidden  = false
+        ringOptionView.isHidden = false
         
 
     }
@@ -385,6 +404,20 @@ class CameraView: UIView, SCNSceneRendererDelegate{
         }
     }
     
+    
+    private func setOPtionRings(){
+        NetworkManager.shared.getRing(ringID: "1") {[weak self] res in
+            guard let self = self else {return}
+            switch(res){
+            case .success(let rings):
+                #warning("to be change to current ring from DB Not option rings ")
+                self.currntRing = rings.first
+                self.ringOptionView.setRigns(rings: rings + rings)
+            case .failure(let err):
+                print(err)
+            }
+        }
+    }
     
     func getAngleRelateiveToZAxis(ringmcpPOint:CGPoint?,ringPiPPoint:CGPoint?){
         guard let mcp = ringmcpPOint , let piP = ringPiPPoint else {
@@ -440,24 +473,18 @@ class CameraView: UIView, SCNSceneRendererDelegate{
         scannigngView = scaingView
     }
     
-    @objc func previewExitTapped(){
-        isPreviewing = false
-        overlayLayer.isHidden = false
-        imageCaptureDelegate?.imagePreiviewCanceled()
-    }
+    
     
     @objc func captureScreenshot(){
-//        let img = ringView.takeScreenshot()
-//        imageCaptureDelegate?.imageCaptured(ringImage: img, frame: ringView.bounds,center:ringView.center,angel:zAngel)
-//        print("cameraframe: \(frame.size)")
- //        UIImageWriteToSavedPhotosAlbum(screenshot!, nil, nil, nil)
         isPreviewing = true
         pointsPath.removeAllPoints()
         imageCaptureDelegate?.imageCaptured()
         ringInfoLabel.isHidden = true
         screenShot.isHidden = true
         overlayLayer.isHidden = true
+        ringOptionView.isHidden = true
         previewImage.isHidden = false
+        
         
      }
     
@@ -466,8 +493,28 @@ class CameraView: UIView, SCNSceneRendererDelegate{
         previewImage.pinToSuperViewEdgesWithPadding(in: self, padding: 0 )
         previewImage.isHidden = true
         previewImage.exitButton.addTarget(self, action: #selector(previewExitTapped), for:.touchUpInside)
+        previewImage.buyButton.addTarget(self, action: #selector(buyButtonTapped), for: .touchUpInside)
     }
     
+    @objc func previewExitTapped(){
+        isPreviewing = false
+        overlayLayer.isHidden = false
+        imageCaptureDelegate?.imagePreiviewCanceled()
+    }
+    
+    @objc func buyButtonTapped(){
+        guard let ring = currntRing else {return}
+        if let url = URL(string: ring.link) {
+            UIApplication.shared.open(url)
+        }
+    }
+    
+    
+    func optionRingSelected(ring: Ring) {
+        let newRing = SCNScene(named: "Ring.obj")
+        ringScene = newRing
+        ringView.scene = newRing
+    }
 
 }
 extension Int {

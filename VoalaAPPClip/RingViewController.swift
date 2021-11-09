@@ -14,9 +14,10 @@ class RingViewController: UIViewController {
     var  ringView:SCNView!
     var  ringScene:SCNScene!
     var cameraNode:SCNNode!
-    
     let tryOnButton = UIButton()
+    
     let padding:CGFloat = 20
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         configureButton()
@@ -69,7 +70,7 @@ class RingViewController: UIViewController {
     private func configureCamera(){
         cameraNode = SCNNode()
         cameraNode.camera = SCNCamera()
-        cameraNode.position = SCNVector3(0, 1, 4)
+        cameraNode.position = SCNVector3(0, 1, 6)
         ringScene.rootNode.addChildNode(cameraNode)
         ringView.pointOfView = cameraNode
     }
