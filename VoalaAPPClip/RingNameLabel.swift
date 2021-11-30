@@ -27,13 +27,7 @@ class RingNameLabel: UILabel {
         textAlignment  = .center
         font = UIFont.systemFont(ofSize: 15, weight: .semibold)
     }
-    
-    
-    func AddStroke(color:UIColor,strokeWidth:CGFloat = 2){
-       layer.borderWidth = strokeWidth
-        layer.borderColor = color.cgColor
-        
-    }
+   
     
 }
 

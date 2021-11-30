@@ -120,7 +120,7 @@ class RingCell:UICollectionViewCell{
     
     func setRing(ring:Ring?,image:UIImage?){
         guard let ring = ring  else{return}
-        ringImage.downloadImage(fromURL: ring.topDownPerspective)
+        ringImage.downloadImage(fromURL: ring.topDownPerspective!)
     }
     
     func setAsSelected(){
@@ -140,9 +140,13 @@ struct Ring:Codable{
     let id:Int
     let name:String
     let productGroupId:Int
-    let topDownPerspective:String
-    let bottomUpPerspective:String
-    let sidePerspective:String
+    let topDownPerspective:String?
+    let bottomUpPerspective:String?
+    let sidePerspective:String?
+    let modelFull:String
+    let modelUpperHalf:String
+    let modelLowerHalf:String
+    let price:Double
     let link:String
     let companyId:Int
     let company:Company?

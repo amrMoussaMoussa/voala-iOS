@@ -13,16 +13,17 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     
     
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
-        // Use this method to optionally configure and attach the UIWindow `window` to the provided UIWindowScene `scene`.
-        // If using a storyboard, the `window` property will automatically be initialized and attached to the scene.
-        // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
+        
         if let userActivity = connectionOptions.userActivities.first,
-              userActivity.activityType == NSUserActivityTypeBrowsingWeb,
-              let incomingURL = userActivity.webpageURL,
-              let components = NSURLComponents(url: incomingURL, resolvingAgainstBaseURL: true){
-                  print("AppClip invocation url is : \(incomingURL)")
-                  NetworkManager.shared.setRingID(url: incomingURL.absoluteString)
-              }
+           userActivity.activityType == NSUserActivityTypeBrowsingWeb,
+           let incomingURL = userActivity.webpageURL,
+           let components = NSURLComponents(url: incomingURL, resolvingAgainstBaseURL: true),let params = components.queryItems{
+            print("AppClip invocation url is : \(incomingURL)")
+            let ringID = params.first(where: { $0.name == "id" } )?.value
+            NetworkManager.shared.setRingID(ringID: ringID)
+        }else{
+            NetworkManager.shared.setRingID(ringID: "72")
+        }
         
         // log url
         
@@ -62,18 +63,16 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     }
     
     func scene(_ scene: UIScene, continue userActivity: NSUserActivity) {
-        // Get URL components from the incoming user activity
-        guard userActivity.activityType == NSUserActivityTypeBrowsingWeb,
-              let incomingURL = userActivity.webpageURL,
-              let components = NSURLComponents(url: incomingURL,
-                                               resolvingAgainstBaseURL: true)
-        else {
-            return
+        if userActivity.activityType == NSUserActivityTypeBrowsingWeb,
+           let incomingURL = userActivity.webpageURL,
+           let components = NSURLComponents(url: incomingURL, resolvingAgainstBaseURL: true),let params = components.queryItems{
+            print("AppClip invocation url is : \(incomingURL)")
+            let ringID = params.first(where: { $0.name == "id" } )?.value
+            NetworkManager.shared.setRingID(ringID: ringID)
+        }else{
+            NetworkManager.shared.setRingID(ringID: "72")
         }
-        
-        // log url
-        print("AppClip invocation url is : \(incomingURL)")
-        NetworkManager.shared.`setRingID`(url: incomingURL.absoluteString)
+        NotificationCenter.default.post(name: .ringUpdated, object: nil)
     }
     
     

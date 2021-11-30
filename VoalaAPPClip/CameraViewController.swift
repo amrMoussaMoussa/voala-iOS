@@ -34,6 +34,8 @@ class CameraViewController: UIViewController, imageCapturedProtocl ,AVCapturePho
     override func viewDidLoad() {
         super.viewDidLoad()
         // This sample app detects one hand only.
+        cameraView.parent = self
+        
         
         handPoseRequest.maximumHandCount = 1
         
@@ -46,27 +48,34 @@ class CameraViewController: UIViewController, imageCapturedProtocl ,AVCapturePho
     
     func configureCaptureImage(){
         cameraView.imageCaptureDelegate = self
+        photoOutput.accessibilityFrame = view.frame
     }
     
     func imageCaptured() {
-        cameraFeedSession?.stopRunning()
+        let settings = AVCapturePhotoSettings(format: [AVVideoCodecKey: AVVideoCodecType.jpeg])
+        photoOutput.capturePhoto(with: settings, delegate: self)
     }
     
     func imagePreiviewCanceled(){
         cameraFeedSession?.startRunning()
     }
-    
-//    func photoOutput(_ output: AVCapturePhotoOutput, didFinishProcessingPhoto photo: AVCapturePhoto, error: Error?) {
-//        guard let imageData = photo.fileDataRepresentation() else {
-//            return }
-//        let previewImage = UIImage(data: imageData)
-//        
-//        let previewImageView = PreviewImageView()
-//        previewImageView.modalPresentationStyle = .fullScreen
-//        present(previewImageView, animated: true)
-//        previewImageView.addImage(ringImage: ringImage.ring, handImage: previewImage,frame: ringImage.frame,center:ringorientation.center,angel:ringorientation.angel)
-//    }
-    
+
+    func photoOutput(_ output: AVCapturePhotoOutput, didFinishProcessingPhoto photo: AVCapturePhoto, error: Error?) {
+        guard let imageData = photo.fileDataRepresentation() else {
+            cameraFeedSession?.stopRunning()
+            return
+            
+        }
+        let previewImage = UIImage(data: imageData)
+        let ringImage = cameraView.ringView.takeScreenshot()
+        let HandImage = previewImage
+        let ringViewFrame = cameraView.ringView.bounds
+        let ringViewcenterPOint = ScreenShotHandler.shared.getMiddleRingMidle(img: previewImage)
+        let ringOrientationAngel = cameraView.getZAngel()
+        cameraView.previewImage.addImage(ringImage: ringImage, handImage: HandImage, frame: ringViewFrame, centerPoint: ringViewcenterPOint, angel: ringOrientationAngel)
+        cameraFeedSession?.stopRunning()
+    }
+
             
         
     override func viewDidAppear(_ animated: Bool) {
@@ -194,6 +203,7 @@ extension CameraViewController: AVCaptureVideoDataOutputSampleBufferDelegate {
                 self.processPoints(ringPip: pipPOint, ringMcp: mcpPoint,littleMcp: littleMcp,midlleMcp: middleMcp, indexMcp: indexMcp,wrist:wrist)
             }
         }
+        
 
         let handler = VNImageRequestHandler(cmSampleBuffer: sampleBuffer, orientation: .up, options: [:])
         do {

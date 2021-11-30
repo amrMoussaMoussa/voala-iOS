@@ -1,0 +1,1162 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		1F04DB352737C5B00048ED74 /* RingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F04DB332737C5B00048ED74 /* RingViewController.swift */; };
+		1F04DB37273934B00048ED74 /* RingOptionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F04DB36273934B00048ED74 /* RingOptionsView.swift */; };
+		1F04DB38273934B00048ED74 /* RingOptionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F04DB36273934B00048ED74 /* RingOptionsView.swift */; };
+		1F04DB3F2739659A0048ED74 /* UIimageView+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F04DB3E2739659A0048ED74 /* UIimageView+Ext.swift */; };
+		1F04DB402739659A0048ED74 /* UIimageView+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F04DB3E2739659A0048ED74 /* UIimageView+Ext.swift */; };
+		1F102F8D274CED6B00267FEF /* FlashView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F102F8C274CED6B00267FEF /* FlashView.swift */; };
+		1F102F8E274CED6B00267FEF /* FlashView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F102F8C274CED6B00267FEF /* FlashView.swift */; };
+		1F1544FF2726AFD1007D9407 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F1544FE2726AFD1007D9407 /* AppDelegate.swift */; };
+		1F1545012726AFD1007D9407 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F1545002726AFD1007D9407 /* SceneDelegate.swift */; };
+		1F1545032726AFD1007D9407 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F1545022726AFD1007D9407 /* ViewController.swift */; };
+		1F1545062726AFD1007D9407 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1F1545042726AFD1007D9407 /* Main.storyboard */; };
+		1F1545082726AFD4007D9407 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1F1545072726AFD4007D9407 /* Assets.xcassets */; };
+		1F15450B2726AFD4007D9407 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1F1545092726AFD4007D9407 /* LaunchScreen.storyboard */; };
+		1F1545162726AFD5007D9407 /* VoalaaARTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F1545152726AFD5007D9407 /* VoalaaARTests.swift */; };
+		1F1545212726AFD5007D9407 /* VoalaaARUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F1545202726AFD5007D9407 /* VoalaaARUITests.swift */; };
+		1F1545352726B008007D9407 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F1545342726B008007D9407 /* AppDelegate.swift */; };
+		1F1545372726B008007D9407 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F1545362726B008007D9407 /* SceneDelegate.swift */; };
+		1F1545392726B008007D9407 /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F1545382726B008007D9407 /* CameraViewController.swift */; };
+		1F15453C2726B008007D9407 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1F15453A2726B008007D9407 /* Main.storyboard */; };
+		1F15453E2726B00A007D9407 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1F15453D2726B00A007D9407 /* Assets.xcassets */; };
+		1F1545412726B00A007D9407 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1F15453F2726B00A007D9407 /* LaunchScreen.storyboard */; };
+		1F15454D2726B00A007D9407 /* VoalaAPPClipTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F15454C2726B00A007D9407 /* VoalaAPPClipTests.swift */; };
+		1F1545582726B00B007D9407 /* VoalaAPPClipUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F1545572726B00B007D9407 /* VoalaAPPClipUITests.swift */; };
+		1F15455C2726B00B007D9407 /* VoalaAPPClip.app in Embed App Clips */ = {isa = PBXBuildFile; fileRef = 1F1545322726B008007D9407 /* VoalaAPPClip.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		1F1545692726B0AE007D9407 /* CameraView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F1545672726B0AE007D9407 /* CameraView.swift */; };
+		1F15456C2726B0E9007D9407 /* HandGestureProcessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F15456A2726B0E9007D9407 /* HandGestureProcessor.swift */; };
+		1F15456D2726B3D2007D9407 /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F1545382726B008007D9407 /* CameraViewController.swift */; };
+		1F2E2E1E273182E000C00DB8 /* ScanningVeiw.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F2E2E1D273182E000C00DB8 /* ScanningVeiw.swift */; };
+		1F2E2E20273186BF00C00DB8 /* RingNameLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F2E2E1F273186BF00C00DB8 /* RingNameLabel.swift */; };
+		1F2ED2BA274D661E008567EA /* screenShotHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F2ED2B9274D661E008567EA /* screenShotHandler.swift */; };
+		1F2ED2BB274D661E008567EA /* screenShotHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F2ED2B9274D661E008567EA /* screenShotHandler.swift */; };
+		1F3969F7272C0C8500FE4256 /* ARSceneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F3969F6272C0C8500FE4256 /* ARSceneViewController.swift */; };
+		1F3969F8272C0C8500FE4256 /* ARSceneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F3969F6272C0C8500FE4256 /* ARSceneViewController.swift */; };
+		1F3969FA272C0CAB00FE4256 /* ARSceneView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F3969F9272C0CAB00FE4256 /* ARSceneView.swift */; };
+		1F3969FB272C0CAB00FE4256 /* ARSceneView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F3969F9272C0CAB00FE4256 /* ARSceneView.swift */; };
+		1F398C09274BDDAB001066AF /* Notif+EXt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F398C08274BDDAB001066AF /* Notif+EXt.swift */; };
+		1F398C0A274BDDAB001066AF /* Notif+EXt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F398C08274BDDAB001066AF /* Notif+EXt.swift */; };
+		1F5E27B92753B9A40086EAF1 /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F5E27B82753B9A40086EAF1 /* HomeVC.swift */; };
+		1F6B8698274A482C001E245C /* UpperView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F6B8697274A482B001E245C /* UpperView.swift */; };
+		1F6B8699274A482C001E245C /* UpperView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F6B8697274A482B001E245C /* UpperView.swift */; };
+		1F87B04D27464A4300D6EA9E /* RingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F04DB332737C5B00048ED74 /* RingViewController.swift */; };
+		1F89434D273289C40048D915 /* hand_guide.gif in Resources */ = {isa = PBXBuildFile; fileRef = 1F89434C273289C40048D915 /* hand_guide.gif */; };
+		1F89434E273289C40048D915 /* hand_guide.gif in Resources */ = {isa = PBXBuildFile; fileRef = 1F89434C273289C40048D915 /* hand_guide.gif */; };
+		1F89435327328F160048D915 /* logo.gif in Resources */ = {isa = PBXBuildFile; fileRef = 1F89435227328F160048D915 /* logo.gif */; };
+		1F89435427328F160048D915 /* logo.gif in Resources */ = {isa = PBXBuildFile; fileRef = 1F89435227328F160048D915 /* logo.gif */; };
+		1F8943552732A7C80048D915 /* ScanningVeiw.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F2E2E1D273182E000C00DB8 /* ScanningVeiw.swift */; };
+		1F8943562732A7CB0048D915 /* RingNameLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F2E2E1F273186BF00C00DB8 /* RingNameLabel.swift */; };
+		1F8943582732A7DD0048D915 /* HandGestureProcessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F15456A2726B0E9007D9407 /* HandGestureProcessor.swift */; };
+		1F89435A2732AA3C0048D915 /* previwImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F8943592732AA3C0048D915 /* previwImageView.swift */; };
+		1F89435B2732AA3C0048D915 /* previwImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F8943592732AA3C0048D915 /* previwImageView.swift */; };
+		1F98BFF427270F3000AD775D /* CameraView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F1545672726B0AE007D9407 /* CameraView.swift */; };
+		1F98BFF62727F2B800AD775D /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F98BFF52727F2B800AD775D /* Constants.swift */; };
+		1F98BFF72727F2BB00AD775D /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F98BFF52727F2B800AD775D /* Constants.swift */; };
+		1FB224E1274BB06E00FA2EDE /* UIView+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FB224E0274BB06E00FA2EDE /* UIView+Ext.swift */; };
+		1FB224E2274BB06E00FA2EDE /* UIView+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FB224E0274BB06E00FA2EDE /* UIView+Ext.swift */; };
+		1FB5691F2733D58000BD13D8 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FB5691E2733D58000BD13D8 /* NetworkManager.swift */; };
+		1FB569202733D58300BD13D8 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FB5691E2733D58000BD13D8 /* NetworkManager.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		1F1545122726AFD5007D9407 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1F1544F32726AFD1007D9407 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 1F1544FA2726AFD1007D9407;
+			remoteInfo = VoalaaAR;
+		};
+		1F15451D2726AFD5007D9407 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1F1544F32726AFD1007D9407 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 1F1544FA2726AFD1007D9407;
+			remoteInfo = VoalaaAR;
+		};
+		1F1545492726B00A007D9407 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1F1544F32726AFD1007D9407 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 1F1545312726B008007D9407;
+			remoteInfo = VoalaAPPClip;
+		};
+		1F1545542726B00B007D9407 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1F1544F32726AFD1007D9407 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 1F1545312726B008007D9407;
+			remoteInfo = VoalaAPPClip;
+		};
+		1F15455A2726B00B007D9407 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1F1544F32726AFD1007D9407 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 1F1545312726B008007D9407;
+			remoteInfo = VoalaAPPClip;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		1F1545602726B00B007D9407 /* Embed App Clips */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "$(CONTENTS_FOLDER_PATH)/AppClips";
+			dstSubfolderSpec = 16;
+			files = (
+				1F15455C2726B00B007D9407 /* VoalaAPPClip.app in Embed App Clips */,
+			);
+			name = "Embed App Clips";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		1F04DB332737C5B00048ED74 /* RingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RingViewController.swift; sourceTree = "<group>"; };
+		1F04DB36273934B00048ED74 /* RingOptionsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RingOptionsView.swift; sourceTree = "<group>"; };
+		1F04DB3E2739659A0048ED74 /* UIimageView+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIimageView+Ext.swift"; sourceTree = "<group>"; };
+		1F102F8C274CED6B00267FEF /* FlashView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlashView.swift; sourceTree = "<group>"; };
+		1F1544FB2726AFD1007D9407 /* Voala.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Voala.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		1F1544FE2726AFD1007D9407 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		1F1545002726AFD1007D9407 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		1F1545022726AFD1007D9407 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		1F1545052726AFD1007D9407 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		1F1545072726AFD4007D9407 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		1F15450A2726AFD4007D9407 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		1F15450C2726AFD4007D9407 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1F1545112726AFD5007D9407 /* VoalaTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = VoalaTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		1F1545152726AFD5007D9407 /* VoalaaARTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoalaaARTests.swift; sourceTree = "<group>"; };
+		1F1545172726AFD5007D9407 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1F15451C2726AFD5007D9407 /* VoalaUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = VoalaUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		1F1545202726AFD5007D9407 /* VoalaaARUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoalaaARUITests.swift; sourceTree = "<group>"; };
+		1F1545222726AFD5007D9407 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1F1545322726B008007D9407 /* VoalaAPPClip.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VoalaAPPClip.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		1F1545342726B008007D9407 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		1F1545362726B008007D9407 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		1F1545382726B008007D9407 /* CameraViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraViewController.swift; sourceTree = "<group>"; };
+		1F15453B2726B008007D9407 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		1F15453D2726B00A007D9407 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		1F1545402726B00A007D9407 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		1F1545422726B00A007D9407 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1F1545432726B00A007D9407 /* VoalaAPPClip.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = VoalaAPPClip.entitlements; sourceTree = "<group>"; };
+		1F1545482726B00A007D9407 /* VoalaAPPClipTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = VoalaAPPClipTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		1F15454C2726B00A007D9407 /* VoalaAPPClipTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoalaAPPClipTests.swift; sourceTree = "<group>"; };
+		1F15454E2726B00B007D9407 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1F1545532726B00B007D9407 /* VoalaAPPClipUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = VoalaAPPClipUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		1F1545572726B00B007D9407 /* VoalaAPPClipUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoalaAPPClipUITests.swift; sourceTree = "<group>"; };
+		1F1545592726B00B007D9407 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1F1545672726B0AE007D9407 /* CameraView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraView.swift; sourceTree = "<group>"; };
+		1F15456A2726B0E9007D9407 /* HandGestureProcessor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HandGestureProcessor.swift; sourceTree = "<group>"; };
+		1F2E2E1D273182E000C00DB8 /* ScanningVeiw.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanningVeiw.swift; sourceTree = "<group>"; };
+		1F2E2E1F273186BF00C00DB8 /* RingNameLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RingNameLabel.swift; sourceTree = "<group>"; };
+		1F2ED2B9274D661E008567EA /* screenShotHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = screenShotHandler.swift; sourceTree = "<group>"; };
+		1F3969F6272C0C8500FE4256 /* ARSceneViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARSceneViewController.swift; sourceTree = "<group>"; };
+		1F3969F9272C0CAB00FE4256 /* ARSceneView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARSceneView.swift; sourceTree = "<group>"; };
+		1F398C08274BDDAB001066AF /* Notif+EXt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Notif+EXt.swift"; sourceTree = "<group>"; };
+		1F5E27B82753B9A40086EAF1 /* HomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVC.swift; sourceTree = "<group>"; };
+		1F6B8697274A482B001E245C /* UpperView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpperView.swift; sourceTree = "<group>"; };
+		1F87B0412745236800D6EA9E /* Voala App Clip.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Voala App Clip.entitlements"; sourceTree = "<group>"; };
+		1F87B0422745248600D6EA9E /* Voala App ClipRelease.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Voala App ClipRelease.entitlements"; sourceTree = "<group>"; };
+		1F89434C273289C40048D915 /* hand_guide.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = hand_guide.gif; sourceTree = "<group>"; };
+		1F89435227328F160048D915 /* logo.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = logo.gif; sourceTree = "<group>"; };
+		1F8943592732AA3C0048D915 /* previwImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = previwImageView.swift; sourceTree = "<group>"; };
+		1F98BFF52727F2B800AD775D /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		1FB224E0274BB06E00FA2EDE /* UIView+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Ext.swift"; sourceTree = "<group>"; };
+		1FB5691E2733D58000BD13D8 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		1F1544F82726AFD1007D9407 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1F15450E2726AFD5007D9407 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1F1545192726AFD5007D9407 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1F15452F2726B008007D9407 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1F1545452726B00A007D9407 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1F1545502726B00B007D9407 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		1F04DB3D273965860048ED74 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				1F04DB3E2739659A0048ED74 /* UIimageView+Ext.swift */,
+				1FB224E0274BB06E00FA2EDE /* UIView+Ext.swift */,
+				1F398C08274BDDAB001066AF /* Notif+EXt.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		1F1544F22726AFD1007D9407 = {
+			isa = PBXGroup;
+			children = (
+				1F87B0422745248600D6EA9E /* Voala App ClipRelease.entitlements */,
+				1F87B0412745236800D6EA9E /* Voala App Clip.entitlements */,
+				1F1544FD2726AFD1007D9407 /* VoalaaAR */,
+				1F1545142726AFD5007D9407 /* VoalaaARTests */,
+				1F15451F2726AFD5007D9407 /* VoalaaARUITests */,
+				1F1545332726B008007D9407 /* VoalaAPPClip */,
+				1F15454B2726B00A007D9407 /* VoalaAPPClipTests */,
+				1F1545562726B00B007D9407 /* VoalaAPPClipUITests */,
+				1F1544FC2726AFD1007D9407 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		1F1544FC2726AFD1007D9407 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				1F1544FB2726AFD1007D9407 /* Voala.app */,
+				1F1545112726AFD5007D9407 /* VoalaTests.xctest */,
+				1F15451C2726AFD5007D9407 /* VoalaUITests.xctest */,
+				1F1545322726B008007D9407 /* VoalaAPPClip.app */,
+				1F1545482726B00A007D9407 /* VoalaAPPClipTests.xctest */,
+				1F1545532726B00B007D9407 /* VoalaAPPClipUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		1F1544FD2726AFD1007D9407 /* VoalaaAR */ = {
+			isa = PBXGroup;
+			children = (
+				1F04DB3D273965860048ED74 /* Extensions */,
+				1F1544FE2726AFD1007D9407 /* AppDelegate.swift */,
+				1F1545002726AFD1007D9407 /* SceneDelegate.swift */,
+				1F1545022726AFD1007D9407 /* ViewController.swift */,
+				1F1545042726AFD1007D9407 /* Main.storyboard */,
+				1F1545072726AFD4007D9407 /* Assets.xcassets */,
+				1F1545092726AFD4007D9407 /* LaunchScreen.storyboard */,
+				1F15450C2726AFD4007D9407 /* Info.plist */,
+				1F5E27B82753B9A40086EAF1 /* HomeVC.swift */,
+			);
+			path = VoalaaAR;
+			sourceTree = "<group>";
+		};
+		1F1545142726AFD5007D9407 /* VoalaaARTests */ = {
+			isa = PBXGroup;
+			children = (
+				1F1545152726AFD5007D9407 /* VoalaaARTests.swift */,
+				1F1545172726AFD5007D9407 /* Info.plist */,
+			);
+			path = VoalaaARTests;
+			sourceTree = "<group>";
+		};
+		1F15451F2726AFD5007D9407 /* VoalaaARUITests */ = {
+			isa = PBXGroup;
+			children = (
+				1F1545202726AFD5007D9407 /* VoalaaARUITests.swift */,
+				1F1545222726AFD5007D9407 /* Info.plist */,
+			);
+			path = VoalaaARUITests;
+			sourceTree = "<group>";
+		};
+		1F1545332726B008007D9407 /* VoalaAPPClip */ = {
+			isa = PBXGroup;
+			children = (
+				1F1545342726B008007D9407 /* AppDelegate.swift */,
+				1F1545362726B008007D9407 /* SceneDelegate.swift */,
+				1F3969F6272C0C8500FE4256 /* ARSceneViewController.swift */,
+				1F3969F9272C0CAB00FE4256 /* ARSceneView.swift */,
+				1F1545382726B008007D9407 /* CameraViewController.swift */,
+				1F1545672726B0AE007D9407 /* CameraView.swift */,
+				1F8943592732AA3C0048D915 /* previwImageView.swift */,
+				1F15456A2726B0E9007D9407 /* HandGestureProcessor.swift */,
+				1F04DB332737C5B00048ED74 /* RingViewController.swift */,
+				1F15453A2726B008007D9407 /* Main.storyboard */,
+				1F98BFF52727F2B800AD775D /* Constants.swift */,
+				1F15453D2726B00A007D9407 /* Assets.xcassets */,
+				1F89434C273289C40048D915 /* hand_guide.gif */,
+				1F89435227328F160048D915 /* logo.gif */,
+				1F15453F2726B00A007D9407 /* LaunchScreen.storyboard */,
+				1F1545422726B00A007D9407 /* Info.plist */,
+				1F1545432726B00A007D9407 /* VoalaAPPClip.entitlements */,
+				1F2E2E1D273182E000C00DB8 /* ScanningVeiw.swift */,
+				1F2E2E1F273186BF00C00DB8 /* RingNameLabel.swift */,
+				1FB5691E2733D58000BD13D8 /* NetworkManager.swift */,
+				1F04DB36273934B00048ED74 /* RingOptionsView.swift */,
+				1F6B8697274A482B001E245C /* UpperView.swift */,
+				1F102F8C274CED6B00267FEF /* FlashView.swift */,
+				1F2ED2B9274D661E008567EA /* screenShotHandler.swift */,
+			);
+			path = VoalaAPPClip;
+			sourceTree = "<group>";
+		};
+		1F15454B2726B00A007D9407 /* VoalaAPPClipTests */ = {
+			isa = PBXGroup;
+			children = (
+				1F15454C2726B00A007D9407 /* VoalaAPPClipTests.swift */,
+				1F15454E2726B00B007D9407 /* Info.plist */,
+			);
+			path = VoalaAPPClipTests;
+			sourceTree = "<group>";
+		};
+		1F1545562726B00B007D9407 /* VoalaAPPClipUITests */ = {
+			isa = PBXGroup;
+			children = (
+				1F1545572726B00B007D9407 /* VoalaAPPClipUITests.swift */,
+				1F1545592726B00B007D9407 /* Info.plist */,
+			);
+			path = VoalaAPPClipUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		1F1544FA2726AFD1007D9407 /* Voala */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1F1545252726AFD5007D9407 /* Build configuration list for PBXNativeTarget "Voala" */;
+			buildPhases = (
+				1F1544F72726AFD1007D9407 /* Sources */,
+				1F1544F82726AFD1007D9407 /* Frameworks */,
+				1F1544F92726AFD1007D9407 /* Resources */,
+				1F1545602726B00B007D9407 /* Embed App Clips */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				1F15455B2726B00B007D9407 /* PBXTargetDependency */,
+			);
+			name = Voala;
+			productName = VoalaaAR;
+			productReference = 1F1544FB2726AFD1007D9407 /* Voala.app */;
+			productType = "com.apple.product-type.application";
+		};
+		1F1545102726AFD5007D9407 /* VoalaTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1F1545282726AFD5007D9407 /* Build configuration list for PBXNativeTarget "VoalaTests" */;
+			buildPhases = (
+				1F15450D2726AFD5007D9407 /* Sources */,
+				1F15450E2726AFD5007D9407 /* Frameworks */,
+				1F15450F2726AFD5007D9407 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				1F1545132726AFD5007D9407 /* PBXTargetDependency */,
+			);
+			name = VoalaTests;
+			productName = VoalaaARTests;
+			productReference = 1F1545112726AFD5007D9407 /* VoalaTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		1F15451B2726AFD5007D9407 /* VoalaUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1F15452B2726AFD5007D9407 /* Build configuration list for PBXNativeTarget "VoalaUITests" */;
+			buildPhases = (
+				1F1545182726AFD5007D9407 /* Sources */,
+				1F1545192726AFD5007D9407 /* Frameworks */,
+				1F15451A2726AFD5007D9407 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				1F15451E2726AFD5007D9407 /* PBXTargetDependency */,
+			);
+			name = VoalaUITests;
+			productName = VoalaaARUITests;
+			productReference = 1F15451C2726AFD5007D9407 /* VoalaUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+		1F1545312726B008007D9407 /* VoalaAPPClip */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1F15455D2726B00B007D9407 /* Build configuration list for PBXNativeTarget "VoalaAPPClip" */;
+			buildPhases = (
+				1F15452E2726B008007D9407 /* Sources */,
+				1F15452F2726B008007D9407 /* Frameworks */,
+				1F1545302726B008007D9407 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = VoalaAPPClip;
+			productName = VoalaAPPClip;
+			productReference = 1F1545322726B008007D9407 /* VoalaAPPClip.app */;
+			productType = "com.apple.product-type.application.on-demand-install-capable";
+		};
+		1F1545472726B00A007D9407 /* VoalaAPPClipTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1F1545612726B00B007D9407 /* Build configuration list for PBXNativeTarget "VoalaAPPClipTests" */;
+			buildPhases = (
+				1F1545442726B00A007D9407 /* Sources */,
+				1F1545452726B00A007D9407 /* Frameworks */,
+				1F1545462726B00A007D9407 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				1F15454A2726B00A007D9407 /* PBXTargetDependency */,
+			);
+			name = VoalaAPPClipTests;
+			productName = VoalaAPPClipTests;
+			productReference = 1F1545482726B00A007D9407 /* VoalaAPPClipTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		1F1545522726B00B007D9407 /* VoalaAPPClipUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1F1545642726B00B007D9407 /* Build configuration list for PBXNativeTarget "VoalaAPPClipUITests" */;
+			buildPhases = (
+				1F15454F2726B00B007D9407 /* Sources */,
+				1F1545502726B00B007D9407 /* Frameworks */,
+				1F1545512726B00B007D9407 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				1F1545552726B00B007D9407 /* PBXTargetDependency */,
+			);
+			name = VoalaAPPClipUITests;
+			productName = VoalaAPPClipUITests;
+			productReference = 1F1545532726B00B007D9407 /* VoalaAPPClipUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		1F1544F32726AFD1007D9407 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1250;
+				LastUpgradeCheck = 1250;
+				TargetAttributes = {
+					1F1544FA2726AFD1007D9407 = {
+						CreatedOnToolsVersion = 12.5.1;
+					};
+					1F1545102726AFD5007D9407 = {
+						CreatedOnToolsVersion = 12.5.1;
+						TestTargetID = 1F1544FA2726AFD1007D9407;
+					};
+					1F15451B2726AFD5007D9407 = {
+						CreatedOnToolsVersion = 12.5.1;
+						TestTargetID = 1F1544FA2726AFD1007D9407;
+					};
+					1F1545312726B008007D9407 = {
+						CreatedOnToolsVersion = 12.5.1;
+					};
+					1F1545472726B00A007D9407 = {
+						CreatedOnToolsVersion = 12.5.1;
+						TestTargetID = 1F1545312726B008007D9407;
+					};
+					1F1545522726B00B007D9407 = {
+						CreatedOnToolsVersion = 12.5.1;
+						TestTargetID = 1F1545312726B008007D9407;
+					};
+				};
+			};
+			buildConfigurationList = 1F1544F62726AFD1007D9407 /* Build configuration list for PBXProject "Voala" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 1F1544F22726AFD1007D9407;
+			productRefGroup = 1F1544FC2726AFD1007D9407 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				1F1544FA2726AFD1007D9407 /* Voala */,
+				1F1545102726AFD5007D9407 /* VoalaTests */,
+				1F15451B2726AFD5007D9407 /* VoalaUITests */,
+				1F1545312726B008007D9407 /* VoalaAPPClip */,
+				1F1545472726B00A007D9407 /* VoalaAPPClipTests */,
+				1F1545522726B00B007D9407 /* VoalaAPPClipUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		1F1544F92726AFD1007D9407 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1F15450B2726AFD4007D9407 /* LaunchScreen.storyboard in Resources */,
+				1F1545082726AFD4007D9407 /* Assets.xcassets in Resources */,
+				1F1545062726AFD1007D9407 /* Main.storyboard in Resources */,
+				1F89434D273289C40048D915 /* hand_guide.gif in Resources */,
+				1F89435327328F160048D915 /* logo.gif in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1F15450F2726AFD5007D9407 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1F15451A2726AFD5007D9407 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1F1545302726B008007D9407 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1F1545412726B00A007D9407 /* LaunchScreen.storyboard in Resources */,
+				1F15453E2726B00A007D9407 /* Assets.xcassets in Resources */,
+				1F15453C2726B008007D9407 /* Main.storyboard in Resources */,
+				1F89434E273289C40048D915 /* hand_guide.gif in Resources */,
+				1F89435427328F160048D915 /* logo.gif in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1F1545462726B00A007D9407 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1F1545512726B00B007D9407 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		1F1544F72726AFD1007D9407 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1F3969FA272C0CAB00FE4256 /* ARSceneView.swift in Sources */,
+				1F6B8698274A482C001E245C /* UpperView.swift in Sources */,
+				1F1545032726AFD1007D9407 /* ViewController.swift in Sources */,
+				1F2ED2BA274D661E008567EA /* screenShotHandler.swift in Sources */,
+				1F87B04D27464A4300D6EA9E /* RingViewController.swift in Sources */,
+				1F3969F7272C0C8500FE4256 /* ARSceneViewController.swift in Sources */,
+				1FB569202733D58300BD13D8 /* NetworkManager.swift in Sources */,
+				1F1544FF2726AFD1007D9407 /* AppDelegate.swift in Sources */,
+				1F15456D2726B3D2007D9407 /* CameraViewController.swift in Sources */,
+				1F5E27B92753B9A40086EAF1 /* HomeVC.swift in Sources */,
+				1F04DB37273934B00048ED74 /* RingOptionsView.swift in Sources */,
+				1F04DB3F2739659A0048ED74 /* UIimageView+Ext.swift in Sources */,
+				1F8943562732A7CB0048D915 /* RingNameLabel.swift in Sources */,
+				1F98BFF427270F3000AD775D /* CameraView.swift in Sources */,
+				1F89435A2732AA3C0048D915 /* previwImageView.swift in Sources */,
+				1F8943582732A7DD0048D915 /* HandGestureProcessor.swift in Sources */,
+				1FB224E1274BB06E00FA2EDE /* UIView+Ext.swift in Sources */,
+				1F102F8D274CED6B00267FEF /* FlashView.swift in Sources */,
+				1F8943552732A7C80048D915 /* ScanningVeiw.swift in Sources */,
+				1F1545012726AFD1007D9407 /* SceneDelegate.swift in Sources */,
+				1F398C09274BDDAB001066AF /* Notif+EXt.swift in Sources */,
+				1F98BFF62727F2B800AD775D /* Constants.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1F15450D2726AFD5007D9407 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1F1545162726AFD5007D9407 /* VoalaaARTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1F1545182726AFD5007D9407 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1F1545212726AFD5007D9407 /* VoalaaARUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1F15452E2726B008007D9407 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1FB224E2274BB06E00FA2EDE /* UIView+Ext.swift in Sources */,
+				1FB5691F2733D58000BD13D8 /* NetworkManager.swift in Sources */,
+				1F6B8699274A482C001E245C /* UpperView.swift in Sources */,
+				1F3969FB272C0CAB00FE4256 /* ARSceneView.swift in Sources */,
+				1F04DB352737C5B00048ED74 /* RingViewController.swift in Sources */,
+				1F04DB38273934B00048ED74 /* RingOptionsView.swift in Sources */,
+				1F398C0A274BDDAB001066AF /* Notif+EXt.swift in Sources */,
+				1F15456C2726B0E9007D9407 /* HandGestureProcessor.swift in Sources */,
+				1F3969F8272C0C8500FE4256 /* ARSceneViewController.swift in Sources */,
+				1F1545392726B008007D9407 /* CameraViewController.swift in Sources */,
+				1F2ED2BB274D661E008567EA /* screenShotHandler.swift in Sources */,
+				1F1545352726B008007D9407 /* AppDelegate.swift in Sources */,
+				1F2E2E20273186BF00C00DB8 /* RingNameLabel.swift in Sources */,
+				1F102F8E274CED6B00267FEF /* FlashView.swift in Sources */,
+				1F89435B2732AA3C0048D915 /* previwImageView.swift in Sources */,
+				1F1545372726B008007D9407 /* SceneDelegate.swift in Sources */,
+				1F2E2E1E273182E000C00DB8 /* ScanningVeiw.swift in Sources */,
+				1F1545692726B0AE007D9407 /* CameraView.swift in Sources */,
+				1F04DB402739659A0048ED74 /* UIimageView+Ext.swift in Sources */,
+				1F98BFF72727F2BB00AD775D /* Constants.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1F1545442726B00A007D9407 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1F15454D2726B00A007D9407 /* VoalaAPPClipTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1F15454F2726B00B007D9407 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1F1545582726B00B007D9407 /* VoalaAPPClipUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		1F1545132726AFD5007D9407 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 1F1544FA2726AFD1007D9407 /* Voala */;
+			targetProxy = 1F1545122726AFD5007D9407 /* PBXContainerItemProxy */;
+		};
+		1F15451E2726AFD5007D9407 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 1F1544FA2726AFD1007D9407 /* Voala */;
+			targetProxy = 1F15451D2726AFD5007D9407 /* PBXContainerItemProxy */;
+		};
+		1F15454A2726B00A007D9407 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 1F1545312726B008007D9407 /* VoalaAPPClip */;
+			targetProxy = 1F1545492726B00A007D9407 /* PBXContainerItemProxy */;
+		};
+		1F1545552726B00B007D9407 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 1F1545312726B008007D9407 /* VoalaAPPClip */;
+			targetProxy = 1F1545542726B00B007D9407 /* PBXContainerItemProxy */;
+		};
+		1F15455B2726B00B007D9407 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 1F1545312726B008007D9407 /* VoalaAPPClip */;
+			targetProxy = 1F15455A2726B00B007D9407 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		1F1545042726AFD1007D9407 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				1F1545052726AFD1007D9407 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		1F1545092726AFD4007D9407 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				1F15450A2726AFD4007D9407 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		1F15453A2726B008007D9407 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				1F15453B2726B008007D9407 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		1F15453F2726B00A007D9407 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				1F1545402726B00A007D9407 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		1F1545232726AFD5007D9407 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		1F1545242726AFD5007D9407 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		1F1545262726AFD5007D9407 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "Voala App Clip.entitlements";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 9;
+				DEVELOPMENT_TEAM = S9BJJ67N24;
+				INFOPLIST_FILE = VoalaaAR/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "Volla-Limitetd.VoalaaAR";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		1F1545272726AFD5007D9407 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "Voala App ClipRelease.entitlements";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 9;
+				DEVELOPMENT_TEAM = S9BJJ67N24;
+				INFOPLIST_FILE = VoalaaAR/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "Volla-Limitetd.VoalaaAR";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		1F1545292726AFD5007D9407 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = GWXAFB6JRH;
+				INFOPLIST_FILE = VoalaaARTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "Amr-moussa.VoalaaARTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Voala.app/Voala";
+			};
+			name = Debug;
+		};
+		1F15452A2726AFD5007D9407 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = GWXAFB6JRH;
+				INFOPLIST_FILE = VoalaaARTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "Amr-moussa.VoalaaARTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Voala.app/Voala";
+			};
+			name = Release;
+		};
+		1F15452C2726AFD5007D9407 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = GWXAFB6JRH;
+				INFOPLIST_FILE = VoalaaARUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "Amr-moussa.VoalaaARUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = VoalaaAR;
+			};
+			name = Debug;
+		};
+		1F15452D2726AFD5007D9407 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = GWXAFB6JRH;
+				INFOPLIST_FILE = VoalaaARUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "Amr-moussa.VoalaaARUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = VoalaaAR;
+			};
+			name = Release;
+		};
+		1F15455E2726B00B007D9407 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = VoalaAPPClip/VoalaAPPClip.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 9;
+				DEVELOPMENT_TEAM = S9BJJ67N24;
+				INFOPLIST_FILE = VoalaAPPClip/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "Volla-Limitetd.VoalaaAR.Clip";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		1F15455F2726B00B007D9407 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = VoalaAPPClip/VoalaAPPClip.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 9;
+				DEVELOPMENT_TEAM = S9BJJ67N24;
+				INFOPLIST_FILE = VoalaAPPClip/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "Volla-Limitetd.VoalaaAR.Clip";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		1F1545622726B00B007D9407 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = GWXAFB6JRH;
+				INFOPLIST_FILE = VoalaAPPClipTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "Amr-moussa.VoalaaAR.VoalaAPPClipTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/VoalaAPPClip.app/VoalaAPPClip";
+			};
+			name = Debug;
+		};
+		1F1545632726B00B007D9407 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = GWXAFB6JRH;
+				INFOPLIST_FILE = VoalaAPPClipTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "Amr-moussa.VoalaaAR.VoalaAPPClipTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/VoalaAPPClip.app/VoalaAPPClip";
+			};
+			name = Release;
+		};
+		1F1545652726B00B007D9407 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = GWXAFB6JRH;
+				INFOPLIST_FILE = VoalaAPPClipUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "Amr-moussa.VoalaaAR.VoalaAPPClipUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = VoalaAPPClip;
+			};
+			name = Debug;
+		};
+		1F1545662726B00B007D9407 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = GWXAFB6JRH;
+				INFOPLIST_FILE = VoalaAPPClipUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "Amr-moussa.VoalaaAR.VoalaAPPClipUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = VoalaAPPClip;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		1F1544F62726AFD1007D9407 /* Build configuration list for PBXProject "Voala" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1F1545232726AFD5007D9407 /* Debug */,
+				1F1545242726AFD5007D9407 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1F1545252726AFD5007D9407 /* Build configuration list for PBXNativeTarget "Voala" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1F1545262726AFD5007D9407 /* Debug */,
+				1F1545272726AFD5007D9407 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1F1545282726AFD5007D9407 /* Build configuration list for PBXNativeTarget "VoalaTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1F1545292726AFD5007D9407 /* Debug */,
+				1F15452A2726AFD5007D9407 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1F15452B2726AFD5007D9407 /* Build configuration list for PBXNativeTarget "VoalaUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1F15452C2726AFD5007D9407 /* Debug */,
+				1F15452D2726AFD5007D9407 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1F15455D2726B00B007D9407 /* Build configuration list for PBXNativeTarget "VoalaAPPClip" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1F15455E2726B00B007D9407 /* Debug */,
+				1F15455F2726B00B007D9407 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1F1545612726B00B007D9407 /* Build configuration list for PBXNativeTarget "VoalaAPPClipTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1F1545622726B00B007D9407 /* Debug */,
+				1F1545632726B00B007D9407 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1F1545642726B00B007D9407 /* Build configuration list for PBXNativeTarget "VoalaAPPClipUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1F1545652726B00B007D9407 /* Debug */,
+				1F1545662726B00B007D9407 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 1F1544F32726AFD1007D9407 /* Project object */;
+}
