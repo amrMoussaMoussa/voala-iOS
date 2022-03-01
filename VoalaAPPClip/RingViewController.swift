@@ -175,7 +175,11 @@ class RingViewController: UIViewController {
     
     private func updateScence(res:Result<URL, networkError>){
         guard let ring = currentRing else{return}
+        
+        
         NetworkManager.shared.downloadRingModelUrl(ringID: String(ring.id), ringPth: ring.modelUpperHalf,ringCut: .upper ,completed: {_ in })
+        
+        
         NetworkManager.shared.downloadRingModelUrl(ringID: String(ring.id), ringPth: ring.modelLowerHalf,ringCut: .loawer   , completed: {_ in})
         weak var _self = self
         DispatchQueue.main.async {
@@ -355,9 +359,6 @@ class RingInfoView: UIView {
         nameLebel.text = ringName
         priceLabel.text = "$ \(String(ringPrice))"
     }
-    
-    
-    
     
 }
 

@@ -38,10 +38,6 @@
 		1F2E2E20273186BF00C00DB8 /* RingNameLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F2E2E1F273186BF00C00DB8 /* RingNameLabel.swift */; };
 		1F2ED2BA274D661E008567EA /* screenShotHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F2ED2B9274D661E008567EA /* screenShotHandler.swift */; };
 		1F2ED2BB274D661E008567EA /* screenShotHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F2ED2B9274D661E008567EA /* screenShotHandler.swift */; };
-		1F3969F7272C0C8500FE4256 /* ARSceneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F3969F6272C0C8500FE4256 /* ARSceneViewController.swift */; };
-		1F3969F8272C0C8500FE4256 /* ARSceneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F3969F6272C0C8500FE4256 /* ARSceneViewController.swift */; };
-		1F3969FA272C0CAB00FE4256 /* ARSceneView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F3969F9272C0CAB00FE4256 /* ARSceneView.swift */; };
-		1F3969FB272C0CAB00FE4256 /* ARSceneView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F3969F9272C0CAB00FE4256 /* ARSceneView.swift */; };
 		1F398C09274BDDAB001066AF /* Notif+EXt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F398C08274BDDAB001066AF /* Notif+EXt.swift */; };
 		1F398C0A274BDDAB001066AF /* Notif+EXt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F398C08274BDDAB001066AF /* Notif+EXt.swift */; };
 		1F5E27B92753B9A40086EAF1 /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F5E27B82753B9A40086EAF1 /* HomeVC.swift */; };
@@ -157,8 +153,6 @@
 		1F2E2E1D273182E000C00DB8 /* ScanningVeiw.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanningVeiw.swift; sourceTree = "<group>"; };
 		1F2E2E1F273186BF00C00DB8 /* RingNameLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RingNameLabel.swift; sourceTree = "<group>"; };
 		1F2ED2B9274D661E008567EA /* screenShotHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = screenShotHandler.swift; sourceTree = "<group>"; };
-		1F3969F6272C0C8500FE4256 /* ARSceneViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARSceneViewController.swift; sourceTree = "<group>"; };
-		1F3969F9272C0CAB00FE4256 /* ARSceneView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARSceneView.swift; sourceTree = "<group>"; };
 		1F398C08274BDDAB001066AF /* Notif+EXt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Notif+EXt.swift"; sourceTree = "<group>"; };
 		1F5E27B82753B9A40086EAF1 /* HomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVC.swift; sourceTree = "<group>"; };
 		1F6B8697274A482B001E245C /* UpperView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpperView.swift; sourceTree = "<group>"; };
@@ -295,8 +289,6 @@
 			children = (
 				1F1545342726B008007D9407 /* AppDelegate.swift */,
 				1F1545362726B008007D9407 /* SceneDelegate.swift */,
-				1F3969F6272C0C8500FE4256 /* ARSceneViewController.swift */,
-				1F3969F9272C0CAB00FE4256 /* ARSceneView.swift */,
 				1F1545382726B008007D9407 /* CameraViewController.swift */,
 				1F1545672726B0AE007D9407 /* CameraView.swift */,
 				1F8943592732AA3C0048D915 /* previwImageView.swift */,
@@ -566,12 +558,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1F3969FA272C0CAB00FE4256 /* ARSceneView.swift in Sources */,
 				1F6B8698274A482C001E245C /* UpperView.swift in Sources */,
 				1F1545032726AFD1007D9407 /* ViewController.swift in Sources */,
 				1F2ED2BA274D661E008567EA /* screenShotHandler.swift in Sources */,
 				1F87B04D27464A4300D6EA9E /* RingViewController.swift in Sources */,
-				1F3969F7272C0C8500FE4256 /* ARSceneViewController.swift in Sources */,
 				1FB569202733D58300BD13D8 /* NetworkManager.swift in Sources */,
 				1F1544FF2726AFD1007D9407 /* AppDelegate.swift in Sources */,
 				1F15456D2726B3D2007D9407 /* CameraViewController.swift in Sources */,
@@ -614,12 +604,10 @@
 				1FB224E2274BB06E00FA2EDE /* UIView+Ext.swift in Sources */,
 				1FB5691F2733D58000BD13D8 /* NetworkManager.swift in Sources */,
 				1F6B8699274A482C001E245C /* UpperView.swift in Sources */,
-				1F3969FB272C0CAB00FE4256 /* ARSceneView.swift in Sources */,
 				1F04DB352737C5B00048ED74 /* RingViewController.swift in Sources */,
 				1F04DB38273934B00048ED74 /* RingOptionsView.swift in Sources */,
 				1F398C0A274BDDAB001066AF /* Notif+EXt.swift in Sources */,
 				1F15456C2726B0E9007D9407 /* HandGestureProcessor.swift in Sources */,
-				1F3969F8272C0C8500FE4256 /* ARSceneViewController.swift in Sources */,
 				1F1545392726B008007D9407 /* CameraViewController.swift in Sources */,
 				1F2ED2BB274D661E008567EA /* screenShotHandler.swift in Sources */,
 				1F1545352726B008007D9407 /* AppDelegate.swift in Sources */,
@@ -840,13 +828,14 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = "Voala App Clip.entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 9;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = S9BJJ67N24;
 				INFOPLIST_FILE = VoalaaAR/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 1.0.1;
 				PRODUCT_BUNDLE_IDENTIFIER = "Volla-Limitetd.VoalaaAR";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -862,13 +851,14 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = "Voala App ClipRelease.entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 9;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = S9BJJ67N24;
 				INFOPLIST_FILE = VoalaaAR/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 1.0.1;
 				PRODUCT_BUNDLE_IDENTIFIER = "Volla-Limitetd.VoalaaAR";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -968,13 +958,14 @@
 				CODE_SIGN_ENTITLEMENTS = VoalaAPPClip/VoalaAPPClip.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 9;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = S9BJJ67N24;
 				INFOPLIST_FILE = VoalaAPPClip/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 1.0.1;
 				PRODUCT_BUNDLE_IDENTIFIER = "Volla-Limitetd.VoalaaAR.Clip";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -991,13 +982,14 @@
 				CODE_SIGN_ENTITLEMENTS = VoalaAPPClip/VoalaAPPClip.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 9;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = S9BJJ67N24;
 				INFOPLIST_FILE = VoalaAPPClip/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 1.0.1;
 				PRODUCT_BUNDLE_IDENTIFIER = "Volla-Limitetd.VoalaaAR.Clip";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";

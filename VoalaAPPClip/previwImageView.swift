@@ -88,6 +88,7 @@ class previewImageV: UIView {
     let shareButton = UIButton()
     
     let brandName = UILabel()
+    var ring:Ring?
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -119,7 +120,7 @@ class previewImageV: UIView {
         brandName.textColor = .white.withAlphaComponent(0.7)
         brandName.font = UIFont.systemFont(ofSize: 40, weight: .semibold)
         brandName.textAlignment = .center
-        brandName.text = "Voala"
+        brandName.text = ring?.company?.name
         
         addSubview(screenShotImageView)
         screenShotImageView.addSubview(ringView)
@@ -151,8 +152,8 @@ class previewImageV: UIView {
             brandName.bottomAnchor.constraint(equalTo: buyButton.topAnchor),
             brandName.widthAnchor.constraint(equalTo:widthAnchor),
             brandName.heightAnchor.constraint(equalToConstant: 50),
-            
         ])
+        
         upperVeiw.exitButton.addTarget(self, action: #selector(dimiss), for: .touchUpInside)
         upperVeiw.reopenButton.addTarget(self, action: #selector(dimiss), for: .touchUpInside)
         translatesAutoresizingMaskIntoConstraints = false
@@ -171,6 +172,13 @@ class previewImageV: UIView {
                 self.ringView.transform =  CGAffineTransform(rotationAngle: angel!)
             }
         }
+    
+    func setRing(ring:Ring){
+        self.ring = ring
+        DispatchQueue.main.async {
+            self.brandName.text = ring.company?.name
+        }
+    }
     
     func  hideForScreenShot(){
         upperVeiw.isHidden = true

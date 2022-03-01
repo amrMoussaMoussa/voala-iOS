@@ -108,6 +108,7 @@ class CameraView: UIView, SCNSceneRendererDelegate{
             node.removeFromParentNode()
         })
         currntRing = ring
+        previewImage.setRing(ring: ring)
         let path = cut == .upper ? ring.modelUpperHalf:ring.modelLowerHalf
         loadingView = showLoadingView()
         NetworkManager.shared.downloadRingModelUrl(ringID: String(ring.id), ringPth: path , ringCut: cut, completed: updateScene(res:))
@@ -124,9 +125,9 @@ class CameraView: UIView, SCNSceneRendererDelegate{
                 self.ringScene.wantsScreenSpaceReflection = true
                 let (min,max) = self.ringScene.rootNode.boundingBox
                 let size = max-min
-                print(size)
+//                print(size)
                 print("SCNVector3: \(size.length())")
-                self.ringScene.rootNode.scale = cut == .loawer ? .init(0.7, 0.7, 0.7):.init(1, 1, 1)
+                self.ringScene.rootNode.scale = cut == .loawer ? .init(0.8, 0.8, 0.8):.init(1.1, 1.1, 1.1)
                 self.ringView.scene = self.ringScene
                 self.ringView.isPlaying = true
                 
@@ -202,11 +203,18 @@ class CameraView: UIView, SCNSceneRendererDelegate{
         guard ringScene != nil else{
             return
         }
-        let ringWidth = points.first?.distance(from: points.last ?? .zero) ?? .zero
-        ringView.bounds = .init(x: 0, y: 0, width: ringWidth*1.5 , height: ringWidth)
-
+//        let ringWidth = points.first?.distance(from: points.last ?? .zero) ?? .zero
+//        ringView.bounds = .init(x: 0, y: 0, width: ringWidth*1.5 , height: ringWidth)
+////
         let ringRightPOistion = CGPoint.midPoint(p1:points.last ?? .zero, p2: points.first ?? .zero)
+        
+//
+        let littleMcp = helperPOints.last ?? .zero
+        let ringWidth = middleMcp.distance(from: littleMcp ?? .zero)
+        ringView.bounds = .init(x: 0, y: 0, width: ringWidth/1.75 , height: ringWidth/1.75)
+        
 
+        
          handType = getHandType(wrist:wrist, ringMcp: points.last )
         // Fallback on earlier versions
         handDirection = getHandDirection(middleMcp:middleMcp ,ringMcp: points.last, little: helperPOints.last  as? CGPoint)
@@ -220,9 +228,7 @@ class CameraView: UIView, SCNSceneRendererDelegate{
   
     }
     
-    func getRingWidth(){
-        
-    }
+    
     
     func getHandDirection(middleMcp:CGPoint,ringMcp:CGPoint?,little:CGPoint?) -> HandDirection? {
         guard let ringMcp = ringMcp ,let handType = handType else{
@@ -267,10 +273,10 @@ class CameraView: UIView, SCNSceneRendererDelegate{
         }
         
         if wrist.x > ringMcp.x {
-            print("right")
+//            print("right")
             return .right
         }else{
-            print("left")
+//            print("left")
             return .left
         }
         
@@ -278,13 +284,13 @@ class CameraView: UIView, SCNSceneRendererDelegate{
     
     func getAngelRelativeToXAxis(){
         guard let handDirect = handDirection else{return}
-        print(handDirect)
-        print(handType)
+//        print(handDirect)
+//        print(handType)
         switch handDirect {
         case .up:
             xAngel = 90
         case .back:
-            xAngel = 90
+            xAngel = -80
         }
     }
     
@@ -326,9 +332,9 @@ class CameraView: UIView, SCNSceneRendererDelegate{
 //        handType == .right ? (handDirection == .up ? -1:1):(handDirection == .up ? :)
         #warning("chango to lef and right hand oreintation")
         let angelDirection = getAngelDirection(innerDistance: innerDistance, outterDistance: outterDistance)
-        print(angelDirection)
+//        print(angelDirection)
         yAngel = Int((1-angeelRatio)*45)*angelDirection
-        print(yAngel)
+//        print(yAngel)
         
     }
     
