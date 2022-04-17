@@ -254,8 +254,8 @@
             filePath = "VoalaAPPClip/CameraView.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "227"
-            endingLineNumber = "227"
+            startingLineNumber = "239"
+            endingLineNumber = "239"
             landmarkName = "showPoints(_:midPOint:helperPOints:middleMcp:wrist:color:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -270,8 +270,8 @@
             filePath = "VoalaAPPClip/previwImageView.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "166"
-            endingLineNumber = "166"
+            startingLineNumber = "95"
+            endingLineNumber = "95"
             landmarkName = "addImage(ringImage:handImage:frame:centerPoint:angel:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -334,8 +334,8 @@
             filePath = "VoalaAPPClip/previwImageView.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "170"
-            endingLineNumber = "170"
+            startingLineNumber = "99"
+            endingLineNumber = "99"
             landmarkName = "addImage(ringImage:handImage:frame:centerPoint:angel:)"
             landmarkType = "7">
          </BreakpointContent>

@@ -215,12 +215,6 @@ extension CameraViewController: AVCaptureVideoDataOutputSampleBufferDelegate {
                 return
             }
        
-            if #available(iOS 15.0, *) {
-                let chr = observation.chirality
-                print(chr.rawValue)
-            } else {
-                // Fallback on earlier versions
-            }
 //            let ringPoints = try observation.recognizedPoints(.ringFinger)
     
 //            let littleFinger = try observation.recognizedPoints(.littleFinger)

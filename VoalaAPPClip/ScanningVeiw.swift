@@ -56,7 +56,7 @@ class ScainnigView: UIView {
         addSubview(footerLabel)
         footerLabel.textColor = .white
         footerLabel.numberOfLines = 1
-        footerLabel.text = "loading ..."
+        footerLabel.text = "Scanning hand ..."
         footerLabel.font = UIFont.systemFont(ofSize: 15, weight: .semibold)
         footerLabel.textAlignment = .center
         footerLabel.translatesAutoresizingMaskIntoConstraints = false
@@ -90,6 +90,10 @@ class ScainnigView: UIView {
         translatesAutoresizingMaskIntoConstraints = false
     }
     
+    
+    func UpdateLabeltext(hand:handType){
+        headlinelLabel.text =  hand == .left ? "PLACE YOUR LEFT HAND IN THE MIDDLE OF THE SCREEN":"PLACE YOUR RIGHT HAND IN THE MIDDLE OF THE SCREEN"
+    }
     
     
 }

@@ -25,7 +25,7 @@ class CameraView: UIView, SCNSceneRendererDelegate{
     private var overlayLayer = CAShapeLayer()
     private var pointsPath = UIBezierPath()
     private var  linePath = UIBezierPath()
-
+    
     
     private var handDirection:HandDirection? {
         didSet{
@@ -41,7 +41,7 @@ class CameraView: UIView, SCNSceneRendererDelegate{
     private var xAngel:Int = 90
     private var yAngel:Int = 0
     private var zAngel:CGFloat = 0
-    
+    private var ringCenterPoints:[CGPoint] = []
     var  ringView:SCNView!
     var  ringScene:SCNScene!
     var cameraNode:SCNNode!
@@ -51,14 +51,18 @@ class CameraView: UIView, SCNSceneRendererDelegate{
     
     var imageCaptureDelegate:imageCapturedProtocl?
     
-    let flashView = FlashView()
+    
+    let cameraHeaderView = CameraHeaderView()
+    let flashView  = FlashView()
     let previewImage = previewImageV()
     
     var scannigngView = ScainnigView()
     var currntRing:Ring?
     let screenShot = UIButton()
     let padding:CGFloat = 20
-     
+    
+    let changeHandButton = ChangeHandView()
+    
     var previewLayer: AVCaptureVideoPreviewLayer {
         return layer as! AVCaptureVideoPreviewLayer
     }
@@ -166,13 +170,13 @@ class CameraView: UIView, SCNSceneRendererDelegate{
     
     private func setupOverlay() {
         previewLayer.addSublayer(overlayLayer)
-        screenShot.isHidden = true
-        flashView.isHidden = true
+        hideInfoVeiw()
+        
         
         //        configureSCeneObject()
         screenShot.translatesAutoresizingMaskIntoConstraints = false
         let safeArea = safeAreaLayoutGuide
-        addSubViews(screenShot,flashView)
+        addSubViews(screenShot,cameraHeaderView,flashView,changeHandButton)
         NSLayoutConstraint.activate([
             screenShot.centerXAnchor.constraint(equalTo: centerXAnchor),
             screenShot.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -30),
@@ -180,16 +184,28 @@ class CameraView: UIView, SCNSceneRendererDelegate{
             screenShot.heightAnchor.constraint(equalTo: screenShot.widthAnchor),
             
             
-            flashView.leadingAnchor.constraint(equalTo: leadingAnchor),
-            flashView.topAnchor.constraint(equalTo: safeArea.topAnchor),
-            flashView.trailingAnchor.constraint(equalTo: trailingAnchor),
+            cameraHeaderView.leadingAnchor.constraint(equalTo: leadingAnchor),
+            cameraHeaderView.topAnchor.constraint(equalTo: safeArea.topAnchor),
+            cameraHeaderView.trailingAnchor.constraint(equalTo: trailingAnchor),
+            cameraHeaderView.heightAnchor.constraint(equalToConstant: 50),
+            
+            flashView.leadingAnchor.constraint(equalTo: leadingAnchor,constant: .padding*2),
+            flashView.bottomAnchor.constraint(equalTo: safeArea.bottomAnchor,constant: .npadding),
+            flashView.widthAnchor.constraint(equalToConstant: 50),
             flashView.heightAnchor.constraint(equalToConstant: 50),
+            
+            changeHandButton.trailingAnchor.constraint(equalTo: trailingAnchor,constant: .npadding*2),
+            changeHandButton.bottomAnchor.constraint(equalTo: safeArea.bottomAnchor,constant: .npadding),
+            changeHandButton.widthAnchor.constraint(equalToConstant: 70),
+            changeHandButton.heightAnchor.constraint(equalToConstant: 100),
         ])
+        bringSubviewToFront(changeHandButton)
         screenShot.setImage(UIImage(named: "btn"), for: [])
         screenShot.imageView?.contentMode = .scaleAspectFit
         screenShot.addTarget(self, action: #selector(captureScreenshot), for: .touchUpInside)
-        flashView.exitButton.addTarget(self, action: #selector(exitTapped), for: .touchUpInside)
+        cameraHeaderView.exitButton.addTarget(self, action: #selector(exitTapped), for: .touchUpInside)
         scannigngView.exitButton.addTarget(self, action: #selector(exitTapped), for: .touchUpInside)
+        changeHandButton.changeLanguageButton.addTarget(self, action: #selector(changeLaguageTapped), for: .touchUpInside)
     }
     
     
@@ -203,22 +219,18 @@ class CameraView: UIView, SCNSceneRendererDelegate{
         guard ringScene != nil else{
             return
         }
-//        let ringWidth = points.first?.distance(from: points.last ?? .zero) ?? .zero
-//        ringView.bounds = .init(x: 0, y: 0, width: ringWidth*1.5 , height: ringWidth)
-////
+
         let ringRightPOistion = CGPoint.midPoint(p1:points.last ?? .zero, p2: points.first ?? .zero)
         
-//
         let littleMcp = helperPOints.last ?? .zero
         let ringWidth = middleMcp.distance(from: littleMcp ?? .zero)
-        ringView.bounds = .init(x: 0, y: 0, width: ringWidth/1.75 , height: ringWidth/1.75)
+        let newRingWidth = ringWidth/1.75
+        if abs(newRingWidth -  ringView.bounds.height) > 0.7 {
+            ringView.bounds = .init(x: 0, y: 0, width: newRingWidth , height: newRingWidth)
+        }
         
-
-        
-         handType = getHandType(wrist:wrist, ringMcp: points.last )
-        // Fallback on earlier versions
+        handType = getHandType(wrist:wrist, ringMcp: points.last )
         handDirection = getHandDirection(middleMcp:middleMcp ,ringMcp: points.last, little: helperPOints.last  as? CGPoint)
-//        handDirection == .up ? (cameraNode.position.z = 4):(cameraNode.position.z = 2)
         getAngleRelateiveToZAxis(ringmcpPOint: points.last, ringPiPPoint: points.first)
         getAngeRelativeToYAxis(points:points,helperPOints:helperPOints,middle:middleMcp)
         getAngelRelativeToXAxis()
@@ -245,10 +257,9 @@ class CameraView: UIView, SCNSceneRendererDelegate{
     
     func UpdateImageView(middlePOint:CGPoint,points:[CGPoint],ringPOint:CGPoint){
         guard points.count != 0 else {
-            handType = nil
+//            handType = nil
             handDirection = nil
-            screenShot.isHidden = true
-            flashView.isHidden = true
+            hideInfoVeiw()
             scannigngView.isHidden = false
             return
         }
@@ -257,35 +268,30 @@ class CameraView: UIView, SCNSceneRendererDelegate{
             return
         }
         scannigngView.isHidden = true
-        
         ringView.transform =  CGAffineTransform(rotationAngle: zAngel)
-        ringView.center =  CGPoint(x: ringPOint.x , y: ringPOint.y )
+        let newCenter =  CGPoint(x: ringPOint.x , y: ringPOint.y )
         
-    
-        screenShot.isHidden  = false
-        flashView.isHidden = false
+        if newCenter.distance(from: ringView.center) > 3 {
+            if newCenter.distance(from: ringView.center) > 10 {
+                ringCenterPoints = []
+            }
+            ringCenterPoints.append(newCenter)
+            let m = ringCenterPoints.reduce(.zero, +) / CGFloat(ringCenterPoints.count)
+            print("Distance:\(m.distance(from: ringView.center)) ,  Count:\(ringCenterPoints.count) ")
+            print()
+            ringView.center =  CGPoint(x: m.x , y: m.y )
+            
+        }
+        showINfoView()
     }
     
     func getHandType(wrist:CGPoint?, ringMcp:CGPoint?)-> handType?{
-        
-        guard let wrist = wrist,let ringMcp = ringMcp  else {
-            return nil
-        }
-        
-        if wrist.x > ringMcp.x {
-//            print("right")
-            return .right
-        }else{
-//            print("left")
-            return .left
-        }
-        
+        scannigngView.UpdateLabeltext(hand: changeHandButton.handOreiantaion)
+        return changeHandButton.handOreiantaion
     }
     
     func getAngelRelativeToXAxis(){
         guard let handDirect = handDirection else{return}
-//        print(handDirect)
-//        print(handType)
         switch handDirect {
         case .up:
             xAngel = 90
@@ -317,24 +323,19 @@ class CameraView: UIView, SCNSceneRendererDelegate{
         zAngel = atan2((mcp.y - piP.y), (mcp.x - piP.x)) + (CGFloat.pi / 2)
     }
     
-//ringmcpPOint: points.last, ringPiPPoint: points.first
+
     func getAngeRelativeToYAxis(points:[CGPoint],helperPOints:[CGPoint?],middle:CGPoint){
         guard let littleMcp = helperPOints.last  as? CGPoint ,let indexMcp =  helperPOints.first  as? CGPoint ,let ringMCp = points.last  else {return}
         
         // calculate the distane between little and ring
         let outterDistance = littleMcp.distance(from: ringMCp)
         let innerDistance  = indexMcp.distance(from: middle)
-//        print(indexMcp,middle,ringMCp,littleMcp)
         
         // get larger side distance and calculate minimum distance
         let angeelRatio =  min(outterDistance,innerDistance)/max(outterDistance,innerDistance)
-//        print(angeelRatio)
-//        handType == .right ? (handDirection == .up ? -1:1):(handDirection == .up ? :)
-        #warning("chango to lef and right hand oreintation")
+
         let angelDirection = getAngelDirection(innerDistance: innerDistance, outterDistance: outterDistance)
-//        print(angelDirection)
         yAngel = Int((1-angeelRatio)*45)*angelDirection
-//        print(yAngel)
         
     }
     
@@ -358,8 +359,20 @@ class CameraView: UIView, SCNSceneRendererDelegate{
             scannigngView.trailingAnchor.constraint(equalTo: trailingAnchor),
             scannigngView.bottomAnchor.constraint(equalTo: bottomAnchor)
         ])
+        bringSubviewToFront(changeHandButton)
     }
     
+    func hideInfoVeiw(){
+        screenShot.isHidden = true
+        cameraHeaderView.isHidden = true
+        flashView.isHidden = true
+    }
+    
+    func showINfoView(){
+        screenShot.isHidden  = false
+        cameraHeaderView.isHidden = false
+        flashView.isHidden = false
+    }
     
     
     @objc func captureScreenshot(){
@@ -367,6 +380,7 @@ class CameraView: UIView, SCNSceneRendererDelegate{
         pointsPath.removeAllPoints()
         imageCaptureDelegate?.imageCaptured()
         screenShot.isHidden = true
+        cameraHeaderView.isHidden = true
         flashView.isHidden = true
         overlayLayer.isHidden = true
         previewImage.isHidden = false
@@ -402,8 +416,11 @@ class CameraView: UIView, SCNSceneRendererDelegate{
         }
     }
     
+    @objc func changeLaguageTapped(){
+      handType =  changeHandButton.flipHand()
+      scannigngView.UpdateLabeltext(hand: handType!)
+    }
     
- 
     
    @objc  func windowScreenshot(){
        previewImage.hideForScreenShot()
@@ -427,6 +444,7 @@ class CameraView: UIView, SCNSceneRendererDelegate{
     
 
 }
+
 extension Int {
     func degreesToRadians() -> CGFloat {
         return CGFloat(self) * CGFloat.pi / 180.0
@@ -434,29 +452,7 @@ extension Int {
 }
 
 
-extension UIView {
 
-    func takeScreenshot() -> UIImage {
-
-        // Begin context
-        UIGraphicsBeginImageContextWithOptions(self.bounds.size, false, UIScreen.main.scale)
-
-        // Draw view in that context
-        drawHierarchy(in: self.bounds, afterScreenUpdates: true)
-
-        // And finally, get image
-        let image = UIGraphicsGetImageFromCurrentImageContext()
-        UIGraphicsEndImageContext()
-
-        if (image != nil)
-        {
-            return image!
-        }
-        return UIImage()
-    }
-    
-   
-}
 extension SCNVector3 {
     func length() -> Float {
         return sqrtf(x * x + y * y + z * z)
@@ -466,3 +462,12 @@ func - (l: SCNVector3, r: SCNVector3) -> SCNVector3 {
     return SCNVector3Make(l.x - r.x, l.y - r.y, l.z - r.z)
 }
 
+
+extension CGPoint {
+    static func +(lhs: CGPoint, rhs: CGPoint) -> CGPoint {
+        CGPoint(x: lhs.x + rhs.x, y: lhs.y + rhs.y)
+    }
+    static func /(lhs: CGPoint, rhs: CGFloat) -> CGPoint {
+        CGPoint(x: lhs.x / rhs, y: lhs.y / rhs)
+    }
+}

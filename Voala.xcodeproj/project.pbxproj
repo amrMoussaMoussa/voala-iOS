@@ -12,8 +12,8 @@
 		1F04DB38273934B00048ED74 /* RingOptionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F04DB36273934B00048ED74 /* RingOptionsView.swift */; };
 		1F04DB3F2739659A0048ED74 /* UIimageView+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F04DB3E2739659A0048ED74 /* UIimageView+Ext.swift */; };
 		1F04DB402739659A0048ED74 /* UIimageView+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F04DB3E2739659A0048ED74 /* UIimageView+Ext.swift */; };
-		1F102F8D274CED6B00267FEF /* FlashView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F102F8C274CED6B00267FEF /* FlashView.swift */; };
-		1F102F8E274CED6B00267FEF /* FlashView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F102F8C274CED6B00267FEF /* FlashView.swift */; };
+		1F102F8D274CED6B00267FEF /* cameraHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F102F8C274CED6B00267FEF /* cameraHeaderView.swift */; };
+		1F102F8E274CED6B00267FEF /* cameraHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F102F8C274CED6B00267FEF /* cameraHeaderView.swift */; };
 		1F1544FF2726AFD1007D9407 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F1544FE2726AFD1007D9407 /* AppDelegate.swift */; };
 		1F1545012726AFD1007D9407 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F1545002726AFD1007D9407 /* SceneDelegate.swift */; };
 		1F1545032726AFD1007D9407 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F1545022726AFD1007D9407 /* ViewController.swift */; };
@@ -40,6 +40,8 @@
 		1F2ED2BB274D661E008567EA /* screenShotHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F2ED2B9274D661E008567EA /* screenShotHandler.swift */; };
 		1F398C09274BDDAB001066AF /* Notif+EXt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F398C08274BDDAB001066AF /* Notif+EXt.swift */; };
 		1F398C0A274BDDAB001066AF /* Notif+EXt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F398C08274BDDAB001066AF /* Notif+EXt.swift */; };
+		1F54070528043F9700BC5B1E /* ChangeHandView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F54070428043F9700BC5B1E /* ChangeHandView.swift */; };
+		1F54070628043F9700BC5B1E /* ChangeHandView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F54070428043F9700BC5B1E /* ChangeHandView.swift */; };
 		1F5E27B92753B9A40086EAF1 /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F5E27B82753B9A40086EAF1 /* HomeVC.swift */; };
 		1F6B8698274A482C001E245C /* UpperView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F6B8697274A482B001E245C /* UpperView.swift */; };
 		1F6B8699274A482C001E245C /* UpperView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F6B8697274A482B001E245C /* UpperView.swift */; };
@@ -60,6 +62,8 @@
 		1FB224E2274BB06E00FA2EDE /* UIView+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FB224E0274BB06E00FA2EDE /* UIView+Ext.swift */; };
 		1FB5691F2733D58000BD13D8 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FB5691E2733D58000BD13D8 /* NetworkManager.swift */; };
 		1FB569202733D58300BD13D8 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FB5691E2733D58000BD13D8 /* NetworkManager.swift */; };
+		1FF315FE2803897D004DADAA /* FlashView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FF315FD2803897D004DADAA /* FlashView.swift */; };
+		1FF315FF28038980004DADAA /* FlashView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FF315FD2803897D004DADAA /* FlashView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -118,7 +122,7 @@
 		1F04DB332737C5B00048ED74 /* RingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RingViewController.swift; sourceTree = "<group>"; };
 		1F04DB36273934B00048ED74 /* RingOptionsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RingOptionsView.swift; sourceTree = "<group>"; };
 		1F04DB3E2739659A0048ED74 /* UIimageView+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIimageView+Ext.swift"; sourceTree = "<group>"; };
-		1F102F8C274CED6B00267FEF /* FlashView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlashView.swift; sourceTree = "<group>"; };
+		1F102F8C274CED6B00267FEF /* cameraHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = cameraHeaderView.swift; sourceTree = "<group>"; };
 		1F1544FB2726AFD1007D9407 /* Voala.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Voala.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1F1544FE2726AFD1007D9407 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1F1545002726AFD1007D9407 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -154,6 +158,7 @@
 		1F2E2E1F273186BF00C00DB8 /* RingNameLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RingNameLabel.swift; sourceTree = "<group>"; };
 		1F2ED2B9274D661E008567EA /* screenShotHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = screenShotHandler.swift; sourceTree = "<group>"; };
 		1F398C08274BDDAB001066AF /* Notif+EXt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Notif+EXt.swift"; sourceTree = "<group>"; };
+		1F54070428043F9700BC5B1E /* ChangeHandView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeHandView.swift; sourceTree = "<group>"; };
 		1F5E27B82753B9A40086EAF1 /* HomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVC.swift; sourceTree = "<group>"; };
 		1F6B8697274A482B001E245C /* UpperView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpperView.swift; sourceTree = "<group>"; };
 		1F87B0412745236800D6EA9E /* Voala App Clip.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Voala App Clip.entitlements"; sourceTree = "<group>"; };
@@ -164,6 +169,7 @@
 		1F98BFF52727F2B800AD775D /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		1FB224E0274BB06E00FA2EDE /* UIView+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Ext.swift"; sourceTree = "<group>"; };
 		1FB5691E2733D58000BD13D8 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		1FF315FD2803897D004DADAA /* FlashView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlashView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -307,8 +313,10 @@
 				1FB5691E2733D58000BD13D8 /* NetworkManager.swift */,
 				1F04DB36273934B00048ED74 /* RingOptionsView.swift */,
 				1F6B8697274A482B001E245C /* UpperView.swift */,
-				1F102F8C274CED6B00267FEF /* FlashView.swift */,
+				1F102F8C274CED6B00267FEF /* cameraHeaderView.swift */,
 				1F2ED2B9274D661E008567EA /* screenShotHandler.swift */,
+				1FF315FD2803897D004DADAA /* FlashView.swift */,
+				1F54070428043F9700BC5B1E /* ChangeHandView.swift */,
 			);
 			path = VoalaAPPClip;
 			sourceTree = "<group>";
@@ -564,8 +572,10 @@
 				1F87B04D27464A4300D6EA9E /* RingViewController.swift in Sources */,
 				1FB569202733D58300BD13D8 /* NetworkManager.swift in Sources */,
 				1F1544FF2726AFD1007D9407 /* AppDelegate.swift in Sources */,
+				1FF315FF28038980004DADAA /* FlashView.swift in Sources */,
 				1F15456D2726B3D2007D9407 /* CameraViewController.swift in Sources */,
 				1F5E27B92753B9A40086EAF1 /* HomeVC.swift in Sources */,
+				1F54070528043F9700BC5B1E /* ChangeHandView.swift in Sources */,
 				1F04DB37273934B00048ED74 /* RingOptionsView.swift in Sources */,
 				1F04DB3F2739659A0048ED74 /* UIimageView+Ext.swift in Sources */,
 				1F8943562732A7CB0048D915 /* RingNameLabel.swift in Sources */,
@@ -573,7 +583,7 @@
 				1F89435A2732AA3C0048D915 /* previwImageView.swift in Sources */,
 				1F8943582732A7DD0048D915 /* HandGestureProcessor.swift in Sources */,
 				1FB224E1274BB06E00FA2EDE /* UIView+Ext.swift in Sources */,
-				1F102F8D274CED6B00267FEF /* FlashView.swift in Sources */,
+				1F102F8D274CED6B00267FEF /* cameraHeaderView.swift in Sources */,
 				1F8943552732A7C80048D915 /* ScanningVeiw.swift in Sources */,
 				1F1545012726AFD1007D9407 /* SceneDelegate.swift in Sources */,
 				1F398C09274BDDAB001066AF /* Notif+EXt.swift in Sources */,
@@ -604,6 +614,7 @@
 				1FB224E2274BB06E00FA2EDE /* UIView+Ext.swift in Sources */,
 				1FB5691F2733D58000BD13D8 /* NetworkManager.swift in Sources */,
 				1F6B8699274A482C001E245C /* UpperView.swift in Sources */,
+				1F54070628043F9700BC5B1E /* ChangeHandView.swift in Sources */,
 				1F04DB352737C5B00048ED74 /* RingViewController.swift in Sources */,
 				1F04DB38273934B00048ED74 /* RingOptionsView.swift in Sources */,
 				1F398C0A274BDDAB001066AF /* Notif+EXt.swift in Sources */,
@@ -612,7 +623,8 @@
 				1F2ED2BB274D661E008567EA /* screenShotHandler.swift in Sources */,
 				1F1545352726B008007D9407 /* AppDelegate.swift in Sources */,
 				1F2E2E20273186BF00C00DB8 /* RingNameLabel.swift in Sources */,
-				1F102F8E274CED6B00267FEF /* FlashView.swift in Sources */,
+				1F102F8E274CED6B00267FEF /* cameraHeaderView.swift in Sources */,
+				1FF315FE2803897D004DADAA /* FlashView.swift in Sources */,
 				1F89435B2732AA3C0048D915 /* previwImageView.swift in Sources */,
 				1F1545372726B008007D9407 /* SceneDelegate.swift in Sources */,
 				1F2E2E1E273182E000C00DB8 /* ScanningVeiw.swift in Sources */,
@@ -835,7 +847,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0.1;
+				MARKETING_VERSION = 1.0.2;
 				PRODUCT_BUNDLE_IDENTIFIER = "Volla-Limitetd.VoalaaAR";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -858,7 +870,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0.1;
+				MARKETING_VERSION = 1.0.2;
 				PRODUCT_BUNDLE_IDENTIFIER = "Volla-Limitetd.VoalaaAR";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -965,7 +977,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0.1;
+				MARKETING_VERSION = 1.0.2;
 				PRODUCT_BUNDLE_IDENTIFIER = "Volla-Limitetd.VoalaaAR.Clip";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -989,7 +1001,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0.1;
+				MARKETING_VERSION = 1.0.2;
 				PRODUCT_BUNDLE_IDENTIFIER = "Volla-Limitetd.VoalaaAR.Clip";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";

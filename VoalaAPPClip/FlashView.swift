@@ -1,18 +1,16 @@
 //
 //  FlashView.swift
-//  Voala 
+//  VoalaAPPClip
 //
-//  Created by Amr Moussa on 23/11/2021.
+//  Created by Amr Moussa on 10/04/2022.
 //
 
 import UIKit
 import AVFoundation
 
 class FlashView: UIView {
-    let flashButton = UIButton()
-    let inCartButton = UIButton()
-    let exitButton = UIButton()
     
+    let flashButton = UIButton()
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -25,32 +23,11 @@ class FlashView: UIView {
     }
     
     private func configureLyout(){
-        addSubViews(flashButton,inCartButton,exitButton)
-        flashButton.setImage(Images.flashImage, for: [])
-        inCartButton.setImage(Images.inCartImage, for: [])
-        exitButton.setImage(Images.exitImage, for: [])
-        flashButton.translatesAutoresizingMaskIntoConstraints =  false
-        inCartButton.translatesAutoresizingMaskIntoConstraints = false
-        exitButton.translatesAutoresizingMaskIntoConstraints = false
-        
-        NSLayoutConstraint.activate([
-            inCartButton.topAnchor.constraint(equalTo: topAnchor),
-            inCartButton.trailingAnchor.constraint(equalTo: trailingAnchor,constant: .npadding),
-            inCartButton.bottomAnchor.constraint(equalTo: bottomAnchor),
-            inCartButton.widthAnchor.constraint(equalTo: inCartButton.heightAnchor),
-            
-            flashButton.topAnchor.constraint(equalTo: topAnchor),
-            flashButton.centerXAnchor.constraint(equalTo: centerXAnchor),
-            flashButton.bottomAnchor.constraint(equalTo: bottomAnchor),
-            flashButton.widthAnchor.constraint(equalTo: inCartButton.heightAnchor),
-            
-            exitButton.topAnchor.constraint(equalTo: topAnchor),
-            exitButton.leadingAnchor.constraint(equalTo: leadingAnchor,constant: .padding),
-            exitButton.bottomAnchor.constraint(equalTo: bottomAnchor),
-            exitButton.widthAnchor.constraint(equalTo: exitButton.heightAnchor),
-        ])
-        
         translatesAutoresizingMaskIntoConstraints = false
+        addSubViews(flashButton)
+        flashButton.setImage(Images.flashImage, for: [])
+        flashButton.translatesAutoresizingMaskIntoConstraints =  false
+        flashButton.pinToSuperViewEdges(in: self)
         flashButton.addTarget(self, action: #selector(flashTapped), for:.touchUpInside)
         
     }
